@@ -1,4 +1,3 @@
-
 (require 'package)
 (add-to-list
  'package-archives
@@ -25,13 +24,6 @@
 
 (install-packages)
 
-
-
-;; this variables must be set before load helm-gtags
-;; you can change to any prefix key of your choice
-(setq helm-gtags-prefix-key "\C-cg")
-
-(add-to-list 'load-path "~/.emacs.d/custom")
 
 ;; magit
 (require 'magit)
@@ -67,6 +59,7 @@
 ;; company
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
+
 (delete 'company-semantic company-backends)
 (define-key c-mode-map  [(tab)] 'company-complete)
 (define-key c++-mode-map  [(tab)] 'company-complete)
@@ -75,6 +68,8 @@
 
 ;; company-c-headers
 (add-to-list 'company-backends 'company-c-headers)
+
+(define-key c-mode-base-map (kbd "C-<tab>") 'company-irony-c-headers)
 
 ;; hs-minor-mode for folding source code
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
@@ -141,6 +136,7 @@
 
 ;; Package: smartparens
 (require 'smartparens-config)
+
 (setq sp-base-key-bindings 'paredit)
 (setq sp-autoskip-closing-pair 'always)
 (setq sp-hybrid-kill-entire-symbol nil)
