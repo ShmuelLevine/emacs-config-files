@@ -60,8 +60,9 @@
 ;; company
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
-(define-key c-mode-map  [(tab)] 'company-clang)
-(define-key c++-mode-map  [(control tab)] 'company-clang)
+(delete 'company-semantic company-backends)
+(define-key c-mode-map  [(tab)] 'company-complete)
+(define-key c++-mode-map  [(tab)] 'company-complete)
 
 (delete 'company-semantic company-backends)
 (define-key c-mode-map  [(tab)] 'company-complete)
