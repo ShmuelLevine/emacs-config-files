@@ -145,6 +145,7 @@ the beginning of the line.
 
 If ARG is not nil or 1, move forward ARG - 1 lines first. If
 point reaches the beginning or end of the buffer, stop there."
+
   (interactive "^p")
   (setq arg (or arg 1))
 
@@ -269,6 +270,13 @@ or region."
         (exchange-point-and-mark))
     (setq end (line-end-position))
     (cons beg end)))
+
+(defun kill-default-buffer ()
+  "Kill the currently active buffer -- set to C-x k so that users are not asked which buffer they want to kill."
+  (interactive)
+  (let (kill-buffer-query-functions) (kill-buffer)))
+
+(global-set-key (kbd "C-x k") 'kill-default-buffer)
 
 ;; smart openline
 (defun prelude-smart-open-line (arg)

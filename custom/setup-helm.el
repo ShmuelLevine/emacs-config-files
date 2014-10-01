@@ -9,6 +9,12 @@
 
 (require 'helm-files)
 
+;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
+;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
+;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
+(global-set-key (kbd "C-c h") 'helm-command-prefix)
+(global-unset-key (kbd "C-x c"))
+
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebihnd tab to do persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
@@ -30,6 +36,7 @@
  helm-buffers-fuzzy-matching t          ; fuzzy matching buffer names when non-nil
                                         ; useful in helm-mini that lists buffers
  helm-quick-update t ; do not display invisible candidates
+
  helm-idle-delay 0.01 ; be idle for this many seconds, before updating in delayed sources.
  helm-input-idle-delay 0.01 ; be idle for this many seconds, before updating candidate buffer
  helm-M-x-requires-pattern 0	 ; show all candidates when set to 0
@@ -59,6 +66,11 @@
 (define-key 'help-command (kbd "C-f") 'helm-apropos)
 (define-key 'help-command (kbd "r") 'helm-info-emacs)
 (define-key 'help-command (kbd "C-l") 'helm-locate-library)
+
+;; use helm to list eshell history
+(add-hook 'eshell-mode-hook
+          #'(lambda ()
+              (define-key eshell-mode-map (kbd "M-l")  'helm-eshell-history)))
 
 ;;; Save current position to mark ring
 (add-hook 'helm-goto-line-before-hook 'helm-save-current-pos-to-mark-ring)
