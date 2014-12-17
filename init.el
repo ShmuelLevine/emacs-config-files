@@ -5,7 +5,6 @@
  t)
 (package-initialize)
 
-
 (setq gc-cons-threshold 100000000)
 (setq inhibit-startup-message t)
 
@@ -154,7 +153,6 @@
 (require 'projectile)
 (projectile-global-mode)
 (setq projectile-enable-caching t)
-
 
 (require 'helm-projectile)
 (helm-projectile-on)
