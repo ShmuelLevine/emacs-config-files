@@ -12,7 +12,6 @@
 
 (load-file "./installed_packages.el")
 
-
 (defun install-packages ()
   "Install all required packages."
   (interactive)
