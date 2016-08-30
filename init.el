@@ -29,6 +29,23 @@
     volatile-highlights
     undo-tree
     magit
+    magit-gitflow
+    company-irony
+    company-irony-c-headers
+    flycheck
+    flycheck-irony
+    irony
+    isearch+
+    ace-jump-mode
+    ace-jump-helm-line
+    ace-flyspell
+    ace-isearch
+    ace-window
+    helm-company
+    helm-flx
+    helm-fuzzier
+    cmake-project
+    company-flx
     zygospore))
 
 (defun install-packages ()
@@ -53,6 +70,10 @@
 ;; (require 'setup-ggtags)
 (require 'setup-cedet)
 (require 'setup-editing)
+(require 'setup-environment)
+
+
+(global-set-key (kbd "<f2>") 'other-window)
 
 (windmove-default-keybindings)
 
@@ -122,8 +143,8 @@
  )
 
 ;; Package: clean-aindent-mode
-(require 'clean-aindent-mode)
-(add-hook 'prog-mode-hook 'clean-aindent-mode)
+;(require 'clean-aindent-mode)
+;(add-hook 'prog-mode-hook 'clean-aindent-mode)
 
 ;; Package: dtrt-indent
 (require 'dtrt-indent)
