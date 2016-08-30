@@ -28,6 +28,7 @@
     projectile
     volatile-highlights
     undo-tree
+    magit
     zygospore))
 
 (defun install-packages ()
