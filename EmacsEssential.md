@@ -1,44 +1,44 @@
-## 本文档的目的
-* 第一次接触Emacs的时候，可能会发现Emacs的一些概念和操作方法还是比较独特，当然Emacs和其他编辑器如VI或者sublime乃至IDE都是有相通之处的。要知道一般Linux下的终端中的编辑模式就是Emacs Mode，所以对Emacs的掌握带来的收益是多维度的。本文档的目的是介绍Emacs最基础的概念，包括键盘的基础知识、Frame、Buffer、配置和自定义、命令等。
-* 我力图使这个文档足够短，足够口语化。
+## The purpose of this document
+* When the first contact of Emacs, Emacs may find some of the concepts and methods of operation is quite unique, of course, Emacs and other editors such as VI or the sublime and the IDE all have in common is. To know the general Linux terminal under the edit mode is Emacs Mode, it proceeds to bring the Emacs master multi-dimensional. The purpose of this document is the most basic concepts introduced Emacs, including basic knowledge of the keyboard, Frame, Buffer, configuration and customization, and orders.
+* I tried to make this document short enough, enough colloquial.
   
-## 键盘基础知识
-* 事实上，键盘的类型很多，也有很多很微妙的知识。不过对于目前常见的键盘可以粗略分为For Windows或者For Mac（Unix Like），我们暂不过多研究这方面的知识。
-* 键盘上有几个特殊的键位对Emacs来说特别重要，包括Control，Meta, Esc，Alt，Super， RET。
-    * Control键就是在键盘上写着Control字符的键，有些键盘是简写的Ctrl，在Emacs的文档中，或者交互输出的信息中，通常写作C，所以C-c的意思是同时按住Control和c键，C-x就是同时按住Control和x键，而C-c C-e则表示同时按住Control和c键，释放然后再同时按住Control和e键。当然对于思维严谨的同学有必要补充一句，不要求在同一个时刻按下两个键，C-c通常是先按住Control，然后再按住c，然后释放即可。以下描述键盘快捷键都是如此，不再赘述。
-    * Meta键是一个虚拟的说法，通常是Alt键，也可以是Esc键，一般情况下它们是通用的。Meta键简称M。如果在某个场景Alt键不好用，可以试试Esc，M-x这个组合非常重要，表明你要执行一条Emacs命令。
-    * Esc一般在键盘左上角，它和后面要介绍的Alt统称Meta键，简称M。Esc和Alt在Emacs中经常是通用的，但有时候并不如此，比如Esc有退出一些不期望操作时有效果，Alt则没有。
-    * Alt在Mac上就是option键。
-    * Super键也是一个虚拟的说法，在Mac上它就是command，在windows上就是windows键（通常印刷有视窗图标）。Super在快捷键序列里通常简写做S。
-    * RET 就是回车键。
-* 其他的键位基本和普通的用法一致。
+## Keyboard Basics
+* In fact, the type of keyboard a lot, there are a lot of very subtle knowledge. But for the present, can be roughly divided into common keyboard or For Windows For Mac (Unix Like), we will not study too much knowledge in this area.
+* There are several special keys is particularly important for Emacs, including Control, Meta, Esc, Alt, Super, RET on the keyboard.
+    * Control key on the keyboard is written the character Control keys, some keyboards is abbreviated Ctrl, in Emacs documentation, or the information in the interactive output, usually written C, so Cc mean while holding down the Control key and c , Cx is, while holding down the Control key and x, and Cc Ce said while holding down the Control key and c, and then released while holding down the Control key and e. Of course, for students rigorous thinking necessary to add that, at the same time does not require pressing two keys, Cc is usually to hold down Control, then press and hold c, and then release the can. The following description of keyboard shortcuts is true, not repeat them.
+    * Meta key is a virtual statement, usually the Alt key, the Esc key can also be, in general, they are generic. Meta key referred to M. If the Alt key does not work well in a scene, you can try Esc, Mx this combination is very important to show that you want to perform an Emacs command.
+    * Alt Esc usually in the top left of the keyboard, and later to introduce it collectively Meta key, referred to as M. Esc and Alt in Emacs is often common, but sometimes not the case, for example, there are effective Esc to exit some of the undesirable operation, Alt does not.
+    * Alt key on the Mac is the option.
+    * Super key is a virtual view, it is on the Mac command, the windows are windows key (usually printed with a Windows icon). Super shortcut key sequence in commonly abbreviated do S.
+    * RET is the Enter key.
+* Other key bit basic and common use of the same.
 
-## Frame的概念
-* 对于图形界面，你打开Emacs以后，看到的Emacs窗口就是Frame。Emacs允许你打开多个Frame，充分利用多屏。
-* 如果你在终端中打开Emacs，也是允许多个Frame的，只是没有那么直观。
-* 快速的介绍几个和Frame相关的快捷键：
-    * C-x 5 2 打开一个新的Frame，对应的命令是make-frame-command,也即是您也以按下M-x快捷键，然后输入命令new-frame-command,不过如果您使用本配置，你会发现输入命令也是很快的，比如你可以输入ne fr这样的字符组合也可以找到需要的命令。
-    * C-x 5 0 关闭一个Frame，对只有一个Frame的场景，会给出一个提示信息，但不执行这个命令。
-    * C-x 5 o (注意是字符o，不是zero)，切换到其他frame。
-* 注意Frame和screen之间的关系。
-    * screen是个直观的概念，接触计算机的人都会有一块或者多块物理屏幕，不用学究式的讨论概念，你可以认为Frame就是screen，你感兴趣的内容就展示在这里，内容太多一屏装不下，所以需要来回滚动，内容需要互相参考比对，所以多个Frame来满足你的需要。
+## Frame concept
+* For graphical interface, after you open Emacs, see Emacs window is the Frame. Emacs allows you to open multiple Frame, take full advantage of multi-screen.
+* If you open Emacs in a terminal, but also allows multiple Frame, but not so intuitive.
+* Fast Frame and introduce several related shortcuts:
+    * Cx 5 2 to open a new Frame, the corresponding command is make-frame-command, that is, you are also pressing Mx shortcut, and then enter the command new-frame-command, but if you use this configuration, you will enter the command is quickly found, for example, you can enter character combinations such ne fr can also find the command you need.
+    * Cx 5 0 close a Frame, Frame for only one scene, will give a message, but does not execute the command.
+    * Cx 5 o (note the character o, not a zero), switch to another frame.
+* Note that the relationship between the screen and the Frame.
+    * Screen is an intuitive concept, the contact person will have a computer or multiple physical screen, not pedantic discussion of the concept, you can think of is the Frame screen, on the display of the content you're interested in here is too big a screen mounted high, so it is necessary to scroll back and forth, the contents need to refer to each other than the right, so multiple Frame to meet your needs.
     
-## Buffer的概念
-* 简单的说，你打开一个文件后，就是创建了一个Buffer，和这个文件绑定。当你在Buffer中编辑的时候，保存之前，内容并不会写到文件。
-    * 模式的概念，简单的说就是Emacs认为打开的Buffer是程序文件还是邮件，又或者是Markdown文件或者ORG文件等等，Emacs识别之后会尽量为你营造最适合编辑这类文件的环境。一个Buffer可以有一个主模式(Major mode)，可以有多个minor mode，这些信息本文档就不介绍了。可以参考Emacs Tutorial(在Emacs 中输入C-h t马上就可以阅读)。
+## The concept of Buffer
+* Simply put, you open a file, it is to create a Buffer, and the document binding. When you edit in Buffer, and before you save, and the content is not written to the file.
+    * Conceptual models, simply means that Emacs Buffer is considered open files or messages, or is Markdown files or ORG files, etc., then Emacs will try to identify the most suitable for your editing environment to create such documents. A Buffer can have a main mode (Major mode), you can have more than one minor mode, the information in this document is not introduced. You can refer to Emacs Tutorial (Ch t input in Emacs can immediately read).
       
-## 配置和自定义
-* 配置是自定义Emacs的常见方法。
-* Emacs可以满足几乎任何你想自定义的需求。
-* 常见的配置文件：
-    * 您可以在$HOME(Unix 立刻就是你的用户主目录，windows 不同版本有所不同)放置一个".emacs"文件，如果配置不复杂，建议用这个。我之前用这个方法将近10年。
-    * 您可以在$HOME下创建一个.emacs.d目录，Emacs会在这个目录下查找init.el文件。2015年我改用这种模式。
-* Emacs可以通过增加或修改命令改变行为，可以通过修改暴露出来的变量改变行为（这些变量在命令中使用）。可以在启动时定制，也可以在运行时定制。
+## Configuration and Customization
+* Configure Emacs is a common method of customization.
+* Emacs to meet the needs of just about anything you want to customize.
+* Common configuration file:
+    * You can $ HOME (Unix immediately is your home directory, different versions of windows vary) placed a ".emacs" file, if the configuration is not complex, it is recommended to use this. Before I used this method for nearly 10 years.
+    * You can create a .emacs.d directory under $ HOME, Emacs looks init.el files in this directory. 2015 I switched to this mode.
+* Emacs behavior can be changed by adding or modifying command, you can (use these variables in the command) to change the behavior by modifying the exposed variables. You can start to customize, you can also be customized at runtime.
 
-## 命令
-* 可以认为命令就是一般IDE中菜单项目中的具体一项，提供功能，有些命令太常用了所以提供快捷键。
-* 熟悉了Emacs之后您肯定会了解一些命令或快捷键，可以参考[EmacsCommand](https://github.com/quanyufang/emacs-config-files/blob/master/EmacsCommand.md "EmacsCommand")。
-* 几个常用的帮助：
-    * C-h k 可以快速查看一个快捷键绑定了什么命令
-    * C-h f 查看命令的文档
-    * C-h v 查看Emacs中某个变量的说明
+## Command
+* Command is generally considered the IDE menu items specific item, provide functional, some commands too common so provide shortcuts.
+* After you are familiar with Emacs will certainly learn some commands or shortcuts, you can refer to [EmacsCommand] (https://github.com/quanyufang/emacs-config-files/blob/master/EmacsCommand.md "EmacsCommand").
+* Several commonly used to help:
+    * Ch k can quickly see what a shortcut key bindings order
+    * Ch f command to view the document
+    * Ch v See description of a variable in Emacs

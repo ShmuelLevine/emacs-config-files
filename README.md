@@ -1,71 +1,71 @@
-## 这套配置文件的目标
-尝试配置一套在OS X上能够立即使用的emacs配置,这套配置能够满足C/C++、PHP、Python以及Common Lisp（ELisp）开发人员的一般需求。
+The profile of the target ##
+emacs try to configure a set on OS X can be configured for immediate use, this configuration to meet the general needs of C / C ++, PHP, Python and Common Lisp (ELisp) developers.
 
-## 感谢
-感谢原作者[tuhdo](https://github.com/tuhdo "")，这份配置以tuhdo的配置为基础不断修改。
+## Thanks
+Thanks to the original [tuhdo] (https://github.com/tuhdo ""), this configuration is configured to tuhdo ongoing basis changes.
 
-## 特点：
-* 为 C/C++、PHP、Python、Common Lisp编程进行专门定制，满足代码编写过程中快速浏览代码、代码提醒/补足等需要。
-* 代码阅读和编写支持
-    * 使用GTAGS、ETAGS帮助阅读代码， 通过company进行代码补全。统一C/C++、PHP、Python在阅读过程中代码的跳转使用的快捷键等。
-    * python使用jedi来完成代码补足的功能。 
-* 项目管理
-    * 使用projectile 进行项目管理，可以快速的在项目内部查找文件，在项目中grep，在和helm结合起来使用后，非常方便，唯一的缺点是，在数千个文件构成的项目初始化时需要约1分钟的初始化时间。[projectile项目](https://github.com/bbatsov/projectile "")在此。
+## Features:
+* To C / C ++, PHP, Python, Common Lisp programming tailored to meet the coding process quickly browse code, the code to remind / complement other needs.
+* Code reading and writing support
+    * Use GTAGS, ETAGS help read the code, the code completion by the company. Unified C / C ++, PHP, Python code reading process jump use shortcuts like.
+    * Python use jedi code completion complement function. 
+* Project management
+    * Use projectile project management, you can quickly find files within the project, grep in the project, and after the helm in combination, very convenient, the only drawback is the need to initialize the project thousands of files that make up about 1 initialization time minutes. [Projectile project] (https://github.com/bbatsov/projectile "") here.
 * ANYTHING
-    * 使用强大的helm(Helm是Emacs的增量选择框架，具体一点类似google search框当中给你的输入提示，但是强大很多，可以支持的范围很广，包括查找文件是，打开的buffer等，可以这么说，用过helm才会知道写代码的时候需要记住的东西可以那么少，而要找到的时候又是那么快),参考[helm项目](https://emacs-helm.github.io/helm/ "")在此。
-    * 需要特别说明的是，当你用了helm以后，emacs的快捷键记不住也没什么，你可以用过helm-M-x命令（该配置已经绑定在M-x）来快速的查找适合的命令。
+    * Use powerful helm (Helm is Emacs incremental select the frame, specifically among similar google search box to enter your tips, but many powerful, can support a wide range, including locating files is to open the buffer, etc., can so to speak, used the helm will know when the need to write code that can remember something so little, but when you want to find is so fast), reference [helm the project] (https://emacs-helm.github.io / helm / "") here.
+    * Of particular note is that when you use the helm after, emacs shortcuts remember nothing, you can used the helm-Mx command (this configuration is already bound in Mx) to quickly find the appropriate commands.
 
-* 强大的编辑能力
-    * undo-tree可以有效地管理你的编辑历史，提供类树形图形管理界面。
-    * helm-ring.el提供了一套工具，能够帮你展示之前你copy-cut(使用更准确的emacs用语kill)的内容，本配置中使用M-y(命令helm-show-kill-ring）就能展示你的编辑历史中使用过的编辑历史，使用C-n,C-p可以来回查看，RET（回车）即可把内容复制到当前的光标位置。
-* 拥有几套theme，可以耍酷。
-    * 自动识别代码文件的编码（使用unicad)
-* 当前emacs自带的package也非常强大，比如，org-mode非常适合写作和管理TODO-LIST。
-* 自动加载配置文件依赖的包文件。
-    * 个别还未纳入package archives管理的包，放在manual-install目录下管理（包括自动识别文件编码的unicad)
+* Powerful editing capabilities
+    * Undo-tree can effectively manage your edit history, provides classes tree graphical management interface.
+    * Helm-ring.el provides a set of tools that can help you before you show copy-cut (to use a more accurate term emacs kill) the contents of this configuration using the My (command helm-show-kill-ring) can be show your edit history used edit history, use Cn, Cp back and forth to view, RET (Enter) to copy the contents to the current cursor position.
+* Have several sets of theme, you can play it cool.
+    * Automatic identification code file encoding (use unicad)
+* Current emacs package also comes with a very powerful, for example, org-mode is ideal for writing and managing TODO-LIST.
+* Automatic load profile dependent package files.
+    * Individual package archives management has not been included in the package, on the manual-install directory under management (including automatic identification of file encoding unicad)
 
 
-# 使用方法简介
-## emacs安装：
-当然需要先安装emacs，mac系统个人推荐 http://emacsformacosx.com/。
+# Use Introduction
+## Emacs installation:
+Of course, you need to install emacs, mac system personal recommendation http://emacsformacosx.com/.
 
-## 配置文件的使用
-使用方法：
+Use ## profiles
+how to use:
 git clone https://github.com/quanyufang/emacs-config-files .emacs.d
 
-## 常用命令
-我整理了该配置下可以使用的命令，还比较初级，但基本常用的都能找到 ，见  [EmacsCommand.md](https://github.com/quanyufang/emacs-config-files/blob/master/EmacsCommand.md "")
+## Commonly used commands
+I compiled commands you can use this configuration, still relatively junior, but the basic common can be found, see [EmacsCommand.md] (https://github.com/quanyufang/emacs-config-files/blob/master/ EmacsCommand.md "")
 
-# 注意事项：
-* 第一次打开运行eamcs时，需要下载所有依赖的包，需要消耗一些时间
-* 可能因为墙的原因，melpa.milkbox.net:80很慢，可以尝试VPN
-* (= emacs-major-version 24), 最新的预览版Emacs该配置测试不通过。
+# Precautions:
+* When you first open the run eamcs, you need to download all the dependencies of the package, we need to consume some time
+* Possible because of the wall, melpa.milkbox.net: 80 is slow, you can try VPN
+* (= Emacs-major-version 24), the latest preview version of Emacs does not pass the test configuration.
 
 
-# python注意事项:
+# Python Note:
 1. 参考 http://tkf.github.io/emacs-jedi/latest/ 
-2. 我们把一些快捷键尽量统一了，可以参考custom/setup-programming.el
+2. We try to unify some shortcuts, you can refer to custom / setup-programming.el
 
 # GTAGS使用(GNU GLOBAL)
-* 为什么选用GTAGS?
-    * 对GNU Global进行了解之后，特别是快速所以符号引用，对于阅读代码来说这个是非常高效的，这是对比etags的一个重要优势，但是支持得语言比etags少，比如Lisp就不支持，不过写Lisp程序的人也比较少。
-    * 确实更快，对比一般IDE，你可以在每次操作赢得1秒以上的操作性能和数秒的查询性能（当然IDE也在改进），这个数是我的主观体验。而且我说的是你在8G+ 内存和SSD硬盘这样的机器上。
-    * 建立的索引更多。
-* 这个配置中为方便使用GTAGS做了哪些定制？
-    * 尽量统一不同语言使用GTAGS的快捷键。
-* 外部依赖
-    * 这个配置中C/C++和PHP代码使用gtags，在OS X上面使用Homebrew安装global即可。安装完成之后，在项目目录下面执行gtags，也可以使用helm提供的命令直接在emacs内部生产和更新tags(helm-gtags-update-tags)
+* Why choose GTAGS?
+    * After GNU Global to understand, especially so fast symbolic references for reading the code for this is very efficient, which is an important advantage etags contrast, but language support was less than etags, such as Lisp does not support, but write Lisp programs also relatively small.
+    * Faster Indeed, compared to the general IDE, you can win more than one second each operation operating performance and query performance for a few seconds (of course also improving IDE), this number is my subjective experience. And I'm talking about you in 8G + memory and SSD hard drive on such a machine.
+    * Indexing more.
+* The configuration for ease of use GTAGS do what customization?
+    * Try to unify different languages ​​using keyboard shortcuts GTAGS of.
+* External dependencies
+    * This configuration C / C ++ and PHP code uses gtags, you can use the global install Homebrew on OS X above. After installation is complete, execute gtags project directory, you can also use the command helm provides direct in-house production and emacs update tags (helm-gtags-update-tags)
 
 
-# Lisp注意事项:
-1. 使用etags来建立标签: 
+# Lisp note:
+1. Use etags to create a label: 
 示例：find . -name "*.el"|xargs etags。
-2. 原因就是gtags不支持Lisp语言
+2. The reason for this is not supported by Lisp language gtags
 
 
-# flycheck的说明：
+# Flycheck description:
 
-1.通过执行 M-x flycheck-verify-setup 检查当前语言需要的lint工具是否准备好了
+1. Are Ready by executing Mx flycheck-verify-setup to check the current language needs of lint tools
 
-2.不同的语言需要在不同的OS下，需要的lint工具有所不同，查询对应的安装工具来安装相应的工具。我在OS X下使用Homebrew安装相应工具，比如php语言的支持
+2. Different languages ​​require different OS, different needs of lint tools, query corresponding installation tool to install the appropriate tools. I use the Homebrew install the appropriate tool in OS X, such as support for php language
 brew install homebrew/php/php-code-sniffer homebrew/php/phpmd

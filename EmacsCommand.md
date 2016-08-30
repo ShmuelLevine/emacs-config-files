@@ -8,12 +8,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. 文件和目录</a>
+<Li> <a href="#sec-1"> 1. Files and Directories </a>
 <ul>
 <li><a href="#sec-1-1">1.1. Helm-files.el</a></li>
 <li><a href="#sec-1-2">1.2. 目录遍历</a></li>
 </ul>
-</li>
+</ Li>
 <li><a href="#sec-2">2. 光标移动</a>
 <ul>
 <li><a href="#sec-2-1">2.1. smartparens.el</a></li>
@@ -21,7 +21,7 @@
 <li><a href="#sec-2-3">2.3. whitespace.el</a></li>
 <li><a href="#sec-2-4">2.4. discover-my-major.el</a></li>
 </ul>
-</li>
+</ Li>
 <li><a href="#sec-3">3. 文本编辑</a>
 <ul>
 <li><a href="#sec-3-1">3.1. 删除命令</a></li>
@@ -31,7 +31,7 @@
 <li><a href="#sec-3-5">3.5. 矩形操作（列操作）</a></li>
 <li><a href="#sec-3-6">3.6. 搜索</a></li>
 </ul>
-</li>
+</ Li>
 <li><a href="#sec-4">4. 撤销停止操作</a></li>
 <li><a href="#sec-5">5. 全局grep</a></li>
 <li><a href="#sec-6">6. buffer控制</a></li>
@@ -48,15 +48,15 @@
 </div>
 </div>
 
-<p>以下大部分命令是在本配置文件基础上可用的</p>
+<P> Most of these commands are available in this configuration file based on the </ p>
 
-<h1 id="文件和目录aidsec-1namesec-1a">文件和目录<a id="sec-1" name="sec-1"></a></h1>
+<H1 id = "files and directories aidsec-1namesec-1a"> files and directories <a id="sec-1" name="sec-1"> </a> </ h1>
 
 <p>C-x C-f find-file</p>
 
 <p>C-x C-v find-alternate-file</p>
 
-<p>C-x i insert-file 会在光标处插入一个文件的内容</p>
+<P> Cx i insert-file inserts the contents of a file at the cursor </ p>
 
 <p>C-x C-s save-buffer</p>
 
@@ -70,17 +70,17 @@
 
 <h2 id="helm-files.elaidsec-1-1namesec-1-1a">Helm-files.el<a id="sec-1-1" name="sec-1-1"></a></h2>
 
-<p>C-x C-f 把光标放到一个buffer中符合文件名规则的字符串上(/home/usr/a.txt)，C-x C-f可以打开一个文件</p>
+<P> Cx Cf put the cursor on a string in a buffer in the file name rule (/home/usr/a.txt),Cx Cf can open a file </ p>
 
-<h2 id="目录遍历aidsec-1-2namesec-1-2a">目录遍历<a id="sec-1-2" name="sec-1-2"></a></h2>
+<H2 id = "directory traversal aidsec-1-2namesec-1-2a"> directory traversal <a id="sec-1-2" name="sec-1-2"> </a> </ h2>
 
-<p>C-x d打开目录后，把光标放到列表中的子目录，i 命令可以在本buffer展开子目录的内容</p>
+<P> Cx d directory open, place the cursor in the list of subdirectories, it commands to expand the contents of subdirectories </ p> In this buffer
 
 <h1 id="光标移动aidsec-2namesec-2a">光标移动<a id="sec-2" name="sec-2"></a></h1>
 
-<p>C-f forward-char 向前移动一个字符</p>
+<P> Cf forward-char move forward one character </ p>
 
-<p>C-b backward-char 向后移动一个字符</p>
+<P> Cb backward-char move back one character </ p>
 
 <p>C-p previous-line</p>
 
@@ -124,9 +124,9 @@
 
 <h2 id="lisp.elaidsec-2-2namesec-2-2a">lisp.el<a id="sec-2-2" name="sec-2-2"></a></h2>
 
-<p>C-M-@ mark-sexp (备注C-M-SPC我一直用不了）</p>
+<P> CM- @ mark-sexp (Note I have not take CM-SPC) </ p>
 
-<p>C-M-a beginning-of-defun 到一个函数的前面来</p>
+<P> CMa beginning-of-defun to the front of a function to </ p>
 
 <p>C-M-e end-of-defun</p>
 
@@ -134,7 +134,7 @@
 
 <h2 id="whitespace.elaidsec-2-3namesec-2-3a">whitespace.el<a id="sec-2-3" name="sec-2-3"></a></h2>
 
-<p>C-c w 显示空格</p>
+<P> Cc w show spaces </ p>
 
 <h2 id="discover-my-major.elaidsec-2-4namesec-2-4a">discover-my-major.el<a id="sec-2-4" name="sec-2-4"></a></h2>
 
@@ -166,7 +166,7 @@
 kill-paragraph
 </code></pre>
 
-<h2 id="段落和区域操作aidsec-3-2namesec-3-2a">段落和区域操作<a id="sec-3-2" name="sec-3-2"></a></h2>
+<H2 id = "paragraph and regional operations aidsec-3-2namesec-3-2a"> Paragraph and regional operations <a id="sec-3-2" name="sec-3-2"> </a> < / h2>
 
 <p>C-@ set-mark Mark the beginning (or end) of a region.<br/>
 C-Spaceset-mark Ibid. </p>
@@ -177,7 +177,7 @@ C-Spaceset-mark Ibid. </p>
 
 <p>C-x h mark-whole-buffer Mark the current buffer. </p>
 
-<p>M-q fill-paragraph Reset the paragraph. 编写一长串文本时，这个命令自动把文档处理为宽度不超过80列的文本块</p>
+<P> Mq fill-paragraph Reset the paragraph. When writing a long string of text, this command automatically document processing text block width of no more than 80 of </ p>
 
 <p>M-g fill-region Reformatindividual paragraphs with region.</p>
 
@@ -185,13 +185,13 @@ C-Spaceset-mark Ibid. </p>
 
 <p>C-c i &#8217;ident-region-or-buffer </p>
 
-<p>C-u C-@ 返回之前的记录过得位点</p>
+<P> Cu C- @ return to the previous record nice site </ p>
 
 <h2 id="位置变换aidsec-3-3namesec-3-3a">位置变换<a id="sec-3-3" name="sec-3-3"></a></h2>
 
 <p>C-t transpose-chars </p>
 
-<p>M-t transpose-words 比较智能的交换连个单词</p>
+<P> Mt transpose-words fairly intelligent exchange even a word </ p>
 
 <p>C-x C-t transpose-lines</p>
 
@@ -199,7 +199,7 @@ C-Spaceset-mark Ibid. </p>
 
 <p>transpose-paragraphs</p>
 
-<h2 id="大小写处理aidsec-3-4namesec-3-4a">大小写处理<a id="sec-3-4" name="sec-3-4"></a></h2>
+<H2 id = "sensitive handling aidsec-3-4namesec-3-4a"> sensitive handling <a id="sec-3-4" name="sec-3-4"> </a> </ h2 >
 
 <p>M-c capitalize-word</p>
 
@@ -211,21 +211,21 @@ C-Spaceset-mark Ibid. </p>
 
 <p>C-x C-u upcase-region</p>
 
-<h2 id="矩形操作（列操作）aidsec-3-5namesec-3-5a">矩形操作（列操作）<a id="sec-3-5" name="sec-3-5"></a></h2>
+<H2 id = "rectangular operation (column operations) aidsec-3-5namesec-3-5a"> Rectangular operation (column operations) <a id="sec-3-5" name="sec-3-5"> < / a> </ h2>
 
-<p>emacs以C-x r开头的命令来进行矩形操作。先用C-space或者C-@设一个mark，移动光标到另一点，用以下命令进行列操作：</p>
+<P> emacs In order to begin with Cx r rectangle operations. First with C-space or C- @ set a mark, move the cursor to another point, column operations carried out with the following command: </ p>
 
-<p>C-x r k 剪切一个矩形块</p>
+<P> Cx rk cut a rectangular block </ p>
 
-<p>C-x r y 拷贝/粘贴一个矩形块</p>
+<P> Cx ry copy / paste a rectangular block </ p>
 
-<p>C-x r o 插入一个矩形块</p>
+<P> Cx ro Insert a rectangular block </ p>
 
-<p>C-x r c 清除一个矩形块(使其变成空白)</p>
+<P> Cx rc clear a rectangular block (it goes blank) </ p>
 
-<p>C-x r t 在选定区域的所有列前插入样的字符</p>
+<P> Cx rt all the columns in the selected area before inserting characters like </ p>
 
-<p>query-replace 替换时确认</p>
+<P> to confirm the query-replace replace </ p>
 
 <h2 id="搜索aidsec-3-6namesec-3-6a">搜索<a id="sec-3-6" name="sec-3-6"></a></h2>
 
@@ -239,7 +239,7 @@ C-Spaceset-mark Ibid. </p>
 
 <p>Del Delete an incorrect character whilst searching.</p>
 
-<h1 id="撤销停止操作aidsec-4namesec-4a">撤销停止操作<a id="sec-4" name="sec-4"></a></h1>
+<H1 id = "Undo stop operation aidsec-4namesec-4a"> Undo stop operation <a id="sec-4" name="sec-4"> </a> </ h1>
 
 <p>C-g keyboard-quit</p>
 
@@ -271,79 +271,79 @@ C-Spaceset-mark Ibid. </p>
 
 <p>使用helm-X命令，要从Emacs Command History跳到Emacs Command使用C-o</p>
 
-<h1 id="frame和buffer的控制aidsec-7namesec-7a">frame和buffer 的控制<a id="sec-7" name="sec-7"></a></h1>
+<H1 id = "frame buffer and control aidsec-7namesec-7a"> frame buffer and control <a id="sec-7" name="sec-7"> </a> </ h1>
 
-<p>C-x 5 2 开启一个新的frame（window）</p>
+<P> Cx 5 2 to open a new frame (window) </ p>
 
-<p>C-x 5 0 关掉当前frame</p>
+<P> Cx 5 0 to switch off the current frame </ p>
 
-<p>C-x 4 c - 貌似打开同一个buffer,并且不影响前一个</p>
+<P> Cx 4 c - seemingly open the same buffer, and does not affect previous </ p>
 
 <h1 id="文本阅读aidsec-8namesec-8a">文本阅读<a id="sec-8" name="sec-8"></a></h1>
 
-<p>C-x C-q 进入只读模式</p>
+<P> Cx Cq to enter the read-only mode </ p>
 
 <h1 id="编码aidsec-9namesec-9a">编码<a id="sec-9" name="sec-9"></a></h1>
 
-<p>C-x C-m f utf&#8211;8-unix RET （set-buffer-file-coding-system） - 当你存储文件时改变文件的编码</p>
+<P> Cx Cm f utf & # 8211; 8-unix RET (set-buffer-file-coding-system) - encoding when you change the file storage file </ p>
 
-<p>C-x C-m c RET C-x C-w RET 另存为指定编码 (会提示当前文件编码)</p>
+<P> Cx Cm c RET Cx Cw RET Save as specify the encoding (will prompt the current file encoding) </ p>
 
-<p>C-x RET r (revert-buffer-with-coding-system) 使用指定的编码打开文件</p>
+<P> Cx RET r (revert-buffer-with-coding-system) to open the file using the specified encoding </ p>
 
-<h1 id="代码阅读aidsec-10namesec-10a">代码阅读<a id="sec-10" name="sec-10"></a></h1>
+<H1 id = "code reader aidsec-10namesec-10a"> code reader <a id="sec-10" name="sec-10"> </a> </ h1>
 
 <p>gtags</p>
 
 <p>gtags-pop-stack M-*</p>
 
-<p>M-. 跳转到某个符号的实现</p>
+<P> M-. Go to a symbol achieve </ p>
 
-<p>M-, 找到引用某个符号的代码</p>
+<P> M-, find a reference to a symbol code </ p>
 
-<h1 id="lisp代码编写支持aidsec-11namesec-11a">Lisp代码编写支持<a id="sec-11" name="sec-11"></a></h1>
+<H1 id = "lisp code is written to support aidsec-11namesec-11a"> Lisp code is written to support <a id="sec-11" name="sec-11"> </a> </ h1>
 
-<p>C-u C-M-u 找到第一个不平衡的defun</p>
+<P> Cu CMu find the first unbalanced defun </ p>
 
 <p>C-M-q</p>
 
-<p>C-x C-e 求值一个表达式，输出在回显区</p>
+<P> Cx Ce evaluates an expression output in the echo area </ p>
 
-<p>C-u C-x C-e 求值一个表达式，输出在当前buffer</p>
+<P> Cu Cx Ce evaluates an expression in the current output buffer </ p>
 
-<p>M-x debug-on-entry 指定在某个函数调用时进入调试模式，比如mouse-drag-region</p>
+<P> Mx debug-on-entry indicates that when a function is called to enter debug mode, such as mouse-drag-region </ p>
 
 <h1 id="help帮助aidsec-12namesec-12a">HELP(帮助)<a id="sec-12" name="sec-12"></a></h1>
 
-<p>C-h f 查看一个具体的函数的帮助</p>
+<P> Ch f view a specific help function </ p>
 
-<p>C-h v 查看一个变量的帮助</p>
+<P> Ch v view of a variable with the help of </ p>
 
-<p>C-h k 查看一个键的帮助</p>
+<P> Ch k key to view a help </ p>
 
-<p>C-h p 用主题关键字搜索Emacs Lisp标准库</p>
+<P> Ch p by topic keyword search Emacs Lisp standard library </ p>
 
 <h1 id="helmaidsec-13namesec-13a">helm<a id="sec-13" name="sec-13"></a></h1>
 
-<p>如果使用了helm，它既带来了极大的便利性，也带来一些用法的小的变化，比如</p>
+<P> If you use the helm, both brought great convenience, it also brings a number of small changes in usage, such as </ p>
 
-<p>你安装了emacs之后，并没有额外配置，你交互式的调用一个函数forward-line,</p>
+<P> Once you've installed emacs, and no additional configuration, you call a function interactively forward-line, </ p>
 
-<p>希望传递一个参数的的方法是C-u 4 M-x forward-line,现在你的做法是M-x（假</p>
+<P> want to pass a parameter of the method is Cu 4 Mx forward-line, now you practice Mx (false </ p>
 
-<p>定绑定到helm-M-x了），C-n C-p（必要时C-o切换备选区域），将光标移动到希</p>
+<P> set bound to the helm-Mx), Cn Cp (if necessary Co handover candidate region), move the cursor to the Greek </ p>
 
-<p>望选择的命令forward-line，然后按下C-u，输入你希望输入的参数。</p>
+<P> Select the desired command forward-line, and then press Cu, enter the parameters you want to enter. </ P>
 
 <h1 id="projectileaidsec-14namesec-14a">projectile<a id="sec-14" name="sec-14"></a></h1>
 
-<h1 id="分类不明确aidsec-15namesec-15a">分类不明确<a id="sec-15" name="sec-15"></a></h1>
+<H1 id = "classification is not clear aidsec-15namesec-15a"> Classification is not clear <a id="sec-15" name="sec-15"> </a> </ h1>
 
 <p>M-; 执行comment-dwim&#8211;2 </p>
 
-<p>C-X C- + 使用更大的字体</p>
+<P> CX C- + using a larger font </ p>
 
-<p>C-X C- - 使用更小的字体</p>
+<P> CX C- - use a smaller font </ p>
 
 </body>
 </html>

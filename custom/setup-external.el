@@ -74,7 +74,7 @@
             (ansi-term term-cmd))
         (ansi-term term-cmd)))))
 
-(global-set-key (kbd "<f2>") 'visit-ansi-term)
+;(global-set-key (kbd "<f2>") 'visit-ansi-term)
 
 ;; PACKAGE: shell-pop
 ;; GROUP: Processes -> Shell -> Shell Pop
