@@ -45,8 +45,8 @@
 
 ;; Package: clean-aindent-mode
 ;; GROUP: Editing -> Indent -> Clean Aindent
-(require 'clean-aindent-mode)
-(add-hook 'prog-mode-hook 'clean-aindent-mode)
+;(require 'clean-aindent-mode)
+;(add-hook 'prog-mode-hook 'clean-aindent-mode)
 
 
 ;; PACKAGE: dtrt-indent

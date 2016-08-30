@@ -46,6 +46,10 @@
 ;; (require 'setup-ggtags)
 (require 'setup-cedet)
 (require 'setup-editing)
+(require 'setup-environment)
+
+
+(global-set-key (kbd "<f2>") 'other-window)
 
 (windmove-default-keybindings)
 
@@ -124,8 +128,8 @@
  )
 
 ;; Package: clean-aindent-mode
-(require 'clean-aindent-mode)
-(add-hook 'prog-mode-hook 'clean-aindent-mode)
+;(require 'clean-aindent-mode)
+;(add-hook 'prog-mode-hook 'clean-aindent-mode)
 
 ;; Package: dtrt-indent
 (require 'dtrt-indent)
