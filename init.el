@@ -77,7 +77,7 @@
     vlf
     shell-pop
     diff-hl
-;;    magit
+    magit
     flycheck
     flycheck-tip
     nyan-mode
