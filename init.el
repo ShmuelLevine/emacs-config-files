@@ -12,32 +12,41 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(load-file "./installed_packages.el")
+
+(defun install-packages ()
+  "Install all required packages."
+  (interactive)
+  (unless package-archive-contents
+    (package-refresh-contents))
+  (dolist (package demo-packages)
+    (unless (package-installed-p package)
+      (package-install package))))
+
+(install-packages)
+
+
+
 ;; this variables must be set before load helm-gtags
 ;; you can change to any prefix key of your choice
 (setq helm-gtags-prefix-key "\C-cg")
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 
-;;(require 'helm)
-;;(require 'helm-config)
+;; magit
+(require 'magit)
+(global-set-key (kbd "<f9>") 'magit-status)
 
-;;(global-set-key (kbd "C-c h") 'helm-command-prefix)
-;;(global-unset-key (kbd "C-x c"))
+;; Gitflow plugin for Magit.
 
-;;(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
-;;(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
-;;(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+ (require 'magit-gitflow)
+ (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 
-;;(when (executable-find "curl")
-;;  (setq helm-google-suggest-use-curl-p t))
-
-;;(setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
-;;helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
-;;      helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
-;;    helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
-;;    helm-ff-file-name-history-use-recentf t)
-
-;;(helm-mode 1)
+;; C-f in magit status buffer will invoke the gitflow popup.
+(load "/usr/share/emacs/site-lisp/clang-format-3.8/clang-format.el")
+(global-set-key [C-M-tab] "clang-format-region")
+(global-set-key (kbd "C-x \\") 'clang-format-region)
+(global-set-key (kbd "C-x /") 'clang-format-buffer)
 
 (global-set-key (kbd "<f2>") 'other-window)
 

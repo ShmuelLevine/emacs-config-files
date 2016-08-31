@@ -2,3 +2,8 @@
 elpa
 semanticdb
 irony
+projectile-bookmarks.eld
+recentf
+\#*
+.\#*
+session.*
