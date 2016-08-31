@@ -10,60 +10,7 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-<<<<<<< HEAD
 (load-file "./installed_packages.el")
-=======
-(defconst demo-packages
-  '(
-
-    ;; function-args
-    ace-isearch
-    ace-jump-helm-line
-    ace-jump-mode
-    ace-window
-    clean-aindent-mode
-    cmake-project
-    comment-dwim-2
-    company
-    company-flx
-    company-irony
-    company-irony-c-headers
-    dired+
-    dired-dups
-    dired-filter
-    dired-sort
-    dtrt-indent
-    duplicate-thing
-    flycheck
-    flycheck-irony
-    ggtags
-    helm
-    helm-company
-    helm-flx
-    helm-fuzzier
-    helm-gtags
-    helm-projectile
-    helm-swoop
-    iedit
-    image+
-    image-dired+
-    image-file
-    irony
-    isearch+
-    magit
-    magit-gitflow
-    projectile
-    smartparens
-    undo-tree
-    volatile-highlights
-    ws-butler  yasnippet
-    zygospore
-  anzu
-ace-flyspell
-dired-subtree
-disk
-))
->>>>>>> 55828c7bea8f066b461ed70da22d6df389003831
 
 (defun install-packages ()
   "Install all required packages."

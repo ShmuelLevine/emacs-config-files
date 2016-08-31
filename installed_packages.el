@@ -95,7 +95,5 @@
     icicles
     xcscope
     helm-cscope
-
-
-                               )
+    )
   )
