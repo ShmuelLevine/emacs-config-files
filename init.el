@@ -1,6 +1,9 @@
 (require 'package)
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list
+
+ 'package-archives
+ '("melpa" . "http://melpa.org/packages/")
+ t)
 (package-initialize)
 
 (setq gc-cons-threshold 100000000)
@@ -8,56 +11,7 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(defconst demo-packages
-  '(
-
-    ;; function-args
-    ace-isearch
-    ace-jump-helm-line
-    ace-jump-mode
-    ace-window
-    clean-aindent-mode
-    cmake-project
-    comment-dwim-2
-    company
-    company-flx
-    company-irony
-    company-irony-c-headers
-    dired+
-    dired-dups
-    dired-filter
-    dired-sort
-    dtrt-indent
-    duplicate-thing
-    flycheck
-    flycheck-irony
-    ggtags
-    helm
-    helm-company
-    helm-flx
-    helm-fuzzier
-    helm-gtags
-    helm-projectile
-    helm-swoop
-    iedit
-    image+
-    image-dired+
-    image-file
-    irony
-    isearch+
-    magit
-    magit-gitflow
-    projectile
-    smartparens
-    undo-tree
-    volatile-highlights
-    ws-butler  yasnippet
-    zygospore
-  anzu
-ace-flyspell
-dired-subtree
-disk
-))
+(load-file "./installed_packages.el")
 
 (defun install-packages ()
   "Install all required packages."
@@ -74,7 +28,22 @@ disk
 ;; you can change to any prefix key of your choice
 (setq helm-gtags-prefix-key "\C-c g")
 
-(add-to-list 'load-path "~/.emacs.d/custom")
+;; magit
+(require 'magit)
+(global-set-key (kbd "<f9>") 'magit-status)
+
+;; Gitflow plugin for Magit.
+
+ (require 'magit-gitflow)
+ (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
+
+;; C-f in magit status buffer will invoke the gitflow popup.
+(load "/usr/share/emacs/site-lisp/clang-format-3.8/clang-format.el")
+(global-set-key [C-M-tab] "clang-format-region")
+(global-set-key (kbd "C-x \\") 'clang-format-region)
+(global-set-key (kbd "C-x /") 'clang-format-buffer)
+
+(global-set-key (kbd "<f2>") 'other-window)
 
 (require 'setup-helm)
 (require 'setup-helm-gtags)
@@ -89,6 +58,7 @@ disk
 (windmove-default-keybindings)
 
 ;; function-args
+
 ;; (require 'function-args)
 ;; (fa-config-default)
 ;; (define-key c-mode-map  [(tab)] 'company-complete)
@@ -103,8 +73,16 @@ disk
 ;; (define-key c-mode-map  [(control tab)] 'company-complete)
 ;; (define-key c++-mode-map  [(control tab)] 'company-complete)
 
+(delete 'company-semantic company-backends)
+(define-key c-mode-map  [(tab)] 'company-complete)
+(define-key c++-mode-map  [(tab)] 'company-complete)
+;; (define-key c-mode-map  [(control tab)] 'company-complete)
+;; (define-key c++-mode-map  [(control tab)] 'company-complete)
+
 ;; company-c-headers
 (add-to-list 'company-backends 'company-c-headers)
+
+(define-key c-mode-base-map (kbd "C-<tab>") 'company-irony-c-headers)
 
 ;; hs-minor-mode for folding source code
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
@@ -121,7 +99,7 @@ disk
 ;; “java”: The default style for java-mode (see below)
 ;; “user”: When you want to define your own style
 (setq
- c-default-style "linux" ;; set style to "linux"
+ c-default-style "stroustrup" ;; set style to "linux"
  )
 
 (global-set-key (kbd "RET") 'newline-and-indent)  ; automatically indent when press RET
@@ -171,6 +149,7 @@ disk
 
 ;; Package: smartparens
 (require 'smartparens-config)
+
 (setq sp-base-key-bindings 'paredit)
 (setq sp-autoskip-closing-pair 'always)
 (setq sp-hybrid-kill-entire-symbol nil)
@@ -189,8 +168,6 @@ disk
 (setq projectile-completion-system 'helm)
 (setq projectile-indexing-method 'alien)
 
-;; Package zygospore
-(global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -203,3 +180,8 @@ disk
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(message "Ready to play!")
+
+;; Package zygospore
+(global-set-key (kbd "C-x 1") 'zygospore-toggle-elete-other-windows)
