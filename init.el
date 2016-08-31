@@ -9,44 +9,55 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (defconst demo-packages
-  '(anzu
-    company
-    duplicate-thing
-    ggtags
-    helm
-    helm-gtags
-    helm-projectile
-    helm-swoop
+  '(
+
     ;; function-args
+    ace-isearch
+    ace-jump-helm-line
+    ace-jump-mode
+    ace-window
     clean-aindent-mode
+    cmake-project
     comment-dwim-2
-    dtrt-indent
-    ws-butler
-    iedit
-    yasnippet
-    smartparens
-    projectile
-    volatile-highlights
-    undo-tree
-    magit
-    magit-gitflow
+    company
+    company-flx
     company-irony
     company-irony-c-headers
+    dired+
+    dired-dups
+    dired-filter
+    dired-sort
+    dtrt-indent
+    duplicate-thing
     flycheck
     flycheck-irony
-    irony
-    isearch+
-    ace-jump-mode
-    ace-jump-helm-line
-    ace-flyspell
-    ace-isearch
-    ace-window
+    ggtags
+    helm
     helm-company
     helm-flx
     helm-fuzzier
-    cmake-project
-    company-flx
-    zygospore))
+    helm-gtags
+    helm-projectile
+    helm-swoop
+    iedit
+    image+
+    image-dired+
+    image-file
+    irony
+    isearch+
+    magit
+    magit-gitflow
+    projectile
+    smartparens
+    undo-tree
+    volatile-highlights
+    ws-butler  yasnippet
+    zygospore
+  anzu
+ace-flyspell
+dired-subtree
+disk
+))
 
 (defun install-packages ()
   "Install all required packages."
@@ -61,7 +72,7 @@
 
 ;; this variables must be set before load helm-gtags
 ;; you can change to any prefix key of your choice
-(setq helm-gtags-prefix-key "\C-cg")
+(setq helm-gtags-prefix-key "\C-c g")
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 

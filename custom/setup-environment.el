@@ -28,6 +28,11 @@
   '(ace-jump-mode-enable-mark-sync))
 (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
+;; Configure irony mode
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+
 
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-irony))
@@ -70,3 +75,25 @@
 ; flx based fuzzy matching for company
 (with-eval-after-load 'company
   (company-flx-mode +1))
+
+;; dired+
+
+(require 'dired-dups)
+(require 'dired-sort)
+
+
+;; disk operations
+(global-set-key (kbd "<f8>") 'disk)
+(autoload 'disk "disk" "Save, revert, or find file." t)
+
+; dired-filter
+(define-key dired-mode-map (kbd "<f7>") dired-filter-map)
+
+(eval-after-load 'image-dired '(require 'image-dired+))
+(eval-after-load 'image-dired+ '(image-diredx-async-mode 1))
+(eval-after-load 'image-dired+ '(image-diredx-adjust-mode 1))
+
+(define-key image-dired-thumbnail-mode-map "\C-n" 'image-diredx-next-line)
+(define-key image-dired-thumbnail-mode-map "\C-p" 'image-diredx-previous-line)
+
+(eval-after-load 'image '(require 'image+))
