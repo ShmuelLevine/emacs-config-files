@@ -1,1 +1,0 @@
-("~/.emacs.d/" "~/src/fx_hpx/" "/usr/src/hpx/")

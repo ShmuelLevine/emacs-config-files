@@ -6,4 +6,5 @@ projectile-bookmarks.eld
 recentf
 \#*
 .\#*
-session.*
+session.*projecile.cache
+projectile.cache

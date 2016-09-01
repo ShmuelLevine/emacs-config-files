@@ -11,7 +11,7 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(load-file "./installed_packages.el")
+(load-file "~/.emacs.d/installed_packages.el")
 
 (defun install-packages ()
   "Install all required packages."
@@ -45,6 +45,8 @@
 
 (global-set-key (kbd "<f2>") 'other-window)
 
+(add-to-list 'load-path "~/.emacs.d/custom")
+
 (require 'setup-helm)
 (require 'setup-helm-gtags)
 ;; (require 'setup-ggtags)
@@ -68,21 +70,17 @@
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 (delete 'company-semantic company-backends)
-(define-key c-mode-map  [(tab)] 'company-complete)
-(define-key c++-mode-map  [(tab)] 'company-complete)
+;(define-key c-mode-map  [(tab)] 'company-complete)
+;(define-key c++-mode-map  [(tab)] 'company-complete)
 ;; (define-key c-mode-map  [(control tab)] 'company-complete)
 ;; (define-key c++-mode-map  [(control tab)] 'company-complete)
 
-(delete 'company-semantic company-backends)
-(define-key c-mode-map  [(tab)] 'company-complete)
-(define-key c++-mode-map  [(tab)] 'company-complete)
+;(delete 'company-semantic company-backends)
+;(define-key c-mode-map  [(tab)] 'company-complete)
+;(define-key c++-mode-map  [(tab)] 'company-complete)
 ;; (define-key c-mode-map  [(control tab)] 'company-complete)
 ;; (define-key c++-mode-map  [(control tab)] 'company-complete)
 
-;; company-c-headers
-(add-to-list 'company-backends 'company-c-headers)
-
-(define-key c-mode-base-map (kbd "C-<tab>") 'company-irony-c-headers)
 
 ;; hs-minor-mode for folding source code
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
@@ -173,7 +171,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(magit-commit-arguments (quote ("--verbose"))))
+ '(magit-commit-arguments (quote ("--verbose")))
+ '(safe-local-variable-values (quote ((eval c-set-offset (quote innamespace) 0)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
