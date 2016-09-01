@@ -1,6 +1,5 @@
 (defconst demo-packages
   '(
-    ace-flyspell
     ace-isearch
     ace-jump-helm-line
     ace-jump-mode
@@ -95,5 +94,7 @@
     icicles
     xcscope
     helm-cscope
+        ace-flyspell
+
     )
   )
