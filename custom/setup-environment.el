@@ -2,7 +2,7 @@
 (require 'helm-fuzzier)
 (helm-fuzzier-mode 1)
 
-(require 'ace-flyspell)
+;(require 'ace-flyspell)
 (require 'ace-jump-helm-line)
 
  (eval-after-load "helm"

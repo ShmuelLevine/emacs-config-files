@@ -51,6 +51,7 @@
     helm
     helm-company
     helm-core
+    helm-flx
     helm-flycheck
     helm-fuzzier
     helm-git
