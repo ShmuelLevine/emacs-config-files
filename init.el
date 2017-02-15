@@ -178,7 +178,19 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(company-tooltip ((t (:background "color-33" :foreground "brightwhite"))))
+ '(diff-added ((t (:inherit diff-changed :background "#226666"))))
+ '(diff-changed ((t (:foreground "white"))))
+ '(diff-file-header ((t (:weight ultra-bold))))
+ '(diff-header ((t (:background "#407f7f"))))
+ '(diff-removed ((t (:inherit diff-changed :background "#aa3939"))))
+ '(link ((t (:foreground "cyan" :underline t))))
+ '(magit-diff-added ((t (:background "Plum" :foreground "gray30" :weight extra-bold))))
+ '(magit-diff-added-highlight ((t (:background "#cceecc" :foreground "black"))))
+ '(magit-section-heading ((t (:foreground "PaleGoldenrod" :weight bold))))
+ '(minibuffer-prompt ((t (:foreground "green"))))
+ '(shadow ((t (:foreground "#226666"))))
+ '(whitespace-space ((t (:foreground "blue1" :underline (:color foreground-color :style wave))))))
 
 (message "Ready to play!")
 
