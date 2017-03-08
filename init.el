@@ -199,29 +199,43 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(magit-commit-arguments (quote ("--verbose")))
- '(magit-log-section-arguments (quote ("--graph" "--color" "--decorate" "-n256")))
- '(safe-local-variable-values (quote ((eval c-set-offset (quote innamespace) 0))))
- '(send-mail-function (quote mailclient-send-it)))
+ '(safe-local-variable-values (quote ((eval c-set-offset (quote innamespace) 0)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(diff-added ((t (:inherit diff-changed :background "#36648b"))))
- '(diff-file-header ((t (:background "grey10" :weight bold))))
- '(diff-header ((t (:background "grey20"))))
- '(diff-removed ((t (:inherit diff-changed :background "#8b1a1a"))))
- '(magit-diff-added ((t (:inherit diff-added))))
- '(magit-diff-added-highlight ((t (:inherit diff-added :weight semi-bold))))
+ '(company-tooltip ((t (:background "color-33" :foreground "brightwhite"))))
+ '(diff-added ((t (:inherit diff-changed :background "#226666"))))
+ '(diff-changed ((t (:foreground "white"))))
+ '(diff-file-header ((t (:weight ultra-bold))))
+ '(diff-header ((t (:background "#407f7f"))))
+ '(diff-removed ((t (:inherit diff-changed :background "#aa3939"))))
+ '(link ((t (:foreground "cyan" :underline t))))
+ '(magit-diff-added ((t (:background "Plum" :foreground "gray30" :weight extra-bold))))
+ '(magit-diff-added-highlight ((t (:background "#cceecc" :foreground "black"))))
  '(magit-diff-removed ((t (:inherit diff-removed))))
  '(magit-diff-removed-highlight ((t (:inherit diff-removed :weight semi-bold))))
+ '(magit-section-heading ((t (:foreground "PaleGoldenrod" :weight bold))))
  '(magit-section-highlight ((t (:background "grey15"))))
+ '(minibuffer-prompt ((t (:foreground "green"))))
+ '(shadow ((t (:foreground "#226666"))))
+ '(smerge-markers ((t (:background "grey85" :foreground "black"))))
  '(sp-pair-overlay-face ((t (:inherit highlight :foreground "black"))))
- '(whitespace-space ((t (:background "grey15" :foreground "lightgray")))))
+ '(whitespace-space ((t (:foreground "blue1" :underline (:color foreground-color :style wave))))))
 
+(defun forward-or-backward-sexp (&optional arg)
+  "Go to the matching parenthesis character if one is adjacent to point."
+  (interactive "^p")
+  (cond ((looking-at "\\s(") (forward-sexp arg))
+        ((looking-back "\\s)" 1) (backward-sexp arg))
+        ;; Now, try to succeed from inside of a bracket
+        ((looking-at "\\s)") (forward-char) (backward-sexp arg))
+        ((looking-back "\\s(" 1) (backward-char) (forward-sexp arg))))
 
 
 (message "Ready to play!")
 
 ;; Package zygospore
-(global-set-key (kbd "C-x 1") 'zygospore-toggle-elete-other-windows)
+(require 'zygospore)
+(global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)

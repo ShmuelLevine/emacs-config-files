@@ -87,6 +87,7 @@
     xterm-color
     yafolding
     yasnippet
+    zygospore
     )
   )
 
