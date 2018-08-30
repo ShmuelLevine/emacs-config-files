@@ -8,6 +8,7 @@
     autopair
     avy
     bookmark+
+    buffer-move
     clean-aindent-mode
     clean-buffers
     cmake-mode
@@ -82,21 +83,22 @@
     swiper
     undo-tree
     volatile-highlights
+    which-key
     with-editor
     ws-butler
     xterm-color
     yafolding
     yasnippet
     zygospore
-    )
-  )
 
-(defconst packages-to-remove
-  '(
-    icicles
-    xcscope
-    helm-cscope
+
+
+    (defconst packages-to-remove
+      '(
+        icicles
+        xcscope
+        helm-cscope
         ace-flyspell
 
-    )
-  )
+        )
+      )))

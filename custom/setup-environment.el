@@ -1,3 +1,6 @@
+(setq tab-width 2)
+(setq-default c-basic-offset 2)
+
 (helm-flx-mode +1)
 (require 'helm-fuzzier)
 (helm-fuzzier-mode 1)
@@ -34,17 +37,6 @@
 (add-hook 'objc-mode-hook 'irony-mode)
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
-
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-irony))
-
-(require 'company-irony-c-headers)
-;; Load with `irony-mode` as a grouped backend
-(eval-after-load 'company
-  '(add-to-list
-    'company-backends '(company-irony-c-headers company-irony)))
-
-
 ; enable flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (eval-after-load 'flycheck
@@ -74,8 +66,8 @@
 
 ;; company-flx
 ; flx based fuzzy matching for company
-(with-eval-after-load 'company
-  (company-flx-mode +1))
+;(with-eval-after-load 'company
+;  (company-flx-mode +1))
 
 ;; dired+
 
@@ -98,3 +90,37 @@
 (define-key image-dired-thumbnail-mode-map "\C-p" 'image-diredx-previous-line)
 
 (eval-after-load 'image '(require 'image+))
+
+;; Change irony cdb search path to look for build/clang time-since
+;; irony makes use of libclang and the automatic search otherwise selects
+;; build/gcc if it is available
+(setq irony-cdb-search-directory-list '("build/clang" "." "build"))
+;("build/clang"))
+
+;; Change the summary line length in magit to be 70 instead of 50.  The default is
+;; just too short...
+(setq git-commit-summary-max-length 70)
+
+;; Set the compile command to be hardcoded to fx_hpx build/gcc directory (for now)
+(defun set_compile_command ()
+  (setq compile-command "cd /local/src/fx_hpx/src/build/gcc; make -kj8")
+  )
+(add-hook 'c++-mode-hook 'set_compile_command)
+
+
+;; Which-key
+;; provides completion menu for keybindings
+(require 'which-key)
+(which-key-mode)
+
+(global-set-key (kbd "C-c C-s") 'isearch-forward-symbol-at-point)
+
+;; Rainbow-delimiters
+(add-hook 'c++-mode #'rainbow-delimiters-mode)
+(add-hook 'c++-mode #'rainbow-identifiers-mode)
+
+
+
+
+(provide 'setup-environment)
+;;; setup-environment.el ends here
