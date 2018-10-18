@@ -28,6 +28,11 @@
 ;; you can change to any prefix key of your choice
 (setq helm-gtags-prefix-key "\C-c g")
 
+;; Set the 'reverse-video' option, which should apply to all new
+;; frames created by emacs
+(setq default-frame-alist
+      (cons (cons 'reverse t) default-frame-alist))
+
 ;; magit
 (require 'magit)
 (global-set-key (kbd "<f9>") 'magit-status)
@@ -202,6 +207,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("5c0ac0e7d92102542908459ffd16f3735f556634191d0fa28d8fd98c31d97cc3" default)))
  '(magit-commit-arguments (quote ("--verbose")))
  '(package-selected-packages
    (quote
