@@ -22,7 +22,7 @@
     (unless (package-installed-p package)
       (package-install package))))
 
-(install-packages)
+;(install-packages)
 
 ;; this variables must be set before load helm-gtags
 ;; you can change to any prefix key of your choice
@@ -55,6 +55,7 @@
 (require 'setup-editing)
 (require 'setup-environment)
 (require 'setup-completion)
+(require 'renumber-tests)
 
 (global-set-key (kbd "<f2>") 'other-window)
 
@@ -147,6 +148,7 @@
 (require 'projectile)
 (projectile-global-mode)
 (setq projectile-enable-caching t)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 (require 'helm-projectile)
 (helm-projectile-on)
@@ -180,7 +182,7 @@
 ;; ;; If you edit it by hand, you could mess it up, so be careful.
 ;; ;; Your init file should contain only one such instance.
 ;; ;; If there is more than one, they won't work right.
-;; '(company-tooltip ((t (:background "color-33" :foreground "brightwhite"))))
+;; '(company-tooltip ((t (:background "#0087ff" :foreground "brightwhite"))))
 ;; '(diff-added ((t (:inherit diff-changed :background "#226666"))))
 ;; '(diff-changed ((t (:foreground "white"))))
 ;; '(diff-file-header ((t (:weight ultra-bold))))
@@ -204,22 +206,27 @@
  '(package-selected-packages
    (quote
     (dired-rainbow rainbow-delimiters rainbow-identifiers isearch-symbol-at-point which-key buffer-move zygospore yasnippet yafolding xterm-color ws-butler volatile-highlights undo-tree smartscan smartparens magit-gitflow magit-filenotify magit iy-go-to-char isearch+ image-dired+ image+ iedit helm-swoop helm-projectile helm-gtags helm-gitignore helm-git helm-fuzzier helm-flycheck helm-flx helm-company google-this gitignore-mode git-commit ggtags fuzzy function-args frame-cmds flycheck-irony flycheck expand-line epl embrace duplicate-thing dummyparens dtrt-indent flyspell-lazy flyspell-correct-helm helm-flyspell dired-subtree dired-dups dired-sort dired-filter dired+ digit-groups diffview cmake-project comment-dwim-2 company-flx company-try-hard company-statistics company-irony-c-headers company-irony company-c-headers company cmake-mode clean-buffers clean-aindent-mode bookmark+ autopair anzu ace-jump-mode ace-jump-helm-line ace-isearch)))
- '(safe-local-variable-values (quote ((eval c-set-offset (quote innamespace) 0)))))
+ '(safe-local-variable-values
+   (quote
+    ((projectile-project-compilation-cmd . "cd /home/shmuel/src/fx_hpx/src/build/gcc && make -kj4")
+     (eval c-set-offset
+           (quote innamespace)
+           0)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-tooltip ((t (:background "color-33" :foreground "brightwhite"))))
+ '(company-tooltip ((t (:background "#0087ff" :foreground "brightwhite"))))
  '(diff-added ((t (:inherit diff-changed :background "#226666"))))
  '(diff-changed ((t (:foreground "white"))))
  '(diff-file-header ((t (:weight ultra-bold))))
  '(diff-header ((t (:background "#407f7f"))))
  '(diff-removed ((t (:inherit diff-changed :background "#aa3939"))))
- '(helm-selection ((t (:background "color-17" :distant-foreground "black"))))
- '(helm-visible-mark ((t (:background "color-89"))))
- '(highlight ((t (:background "color-33"))))
- '(lazy-highlight ((t (:background "color-33"))))
+ '(helm-selection ((t (:background "#00005f" :distant-foreground "black"))))
+ '(helm-visible-mark ((t (:background "#87005f"))))
+ '(highlight ((t (:background "#0087ff"))))
+ '(lazy-highlight ((t (:background "#0087ff"))))
  '(link ((t (:foreground "cyan" :underline t))))
  '(magit-diff-added ((t (:background "Plum" :foreground "gray30" :weight extra-bold))))
  '(magit-diff-added-highlight ((t (:background "#cceecc" :foreground "black"))))
@@ -229,7 +236,7 @@
  '(magit-section-highlight ((t (:background "grey15"))))
  '(minibuffer-prompt ((t (:foreground "green"))))
  '(region ((t (:background "lightgoldenrod2" :foreground "black"))))
- '(secondary-selection ((t (:background "yellow1" :foreground "color-234"))))
+ '(secondary-selection ((t (:background "yellow1" :foreground "#1c1c1c"))))
  '(semantic-highlight-edits-face ((t (:background "gray90" :foreground "black"))))
  '(semantic-highlight-func-current-tag-face ((t (:background "gray90" :foreground "black"))))
  '(semantic-idle-symbol-highlight ((t (:inherit region :foreground "black"))))

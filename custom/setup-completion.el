@@ -23,7 +23,8 @@
 (setq company-minimum-prefix-length 3)
 
 ;; Set default backends for company auto-complete
-(setq company-backends       '(
+(defun cpp-company-backends()
+(setq-local company-backends       '(
                                (company-irony-c-headers
                                 company-irony
                                 )
@@ -35,7 +36,8 @@
                                 )
                                company-cmake
                                (company-abbrev company-dabbrev)
-                              ) )
+                               ))
+)
 
 (require 'company-irony-c-headers)
 ;; Load with `irony-mode` as a grouped backend

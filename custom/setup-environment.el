@@ -1,5 +1,13 @@
 (setq tab-width 2)
 (setq-default c-basic-offset 2)
+(setq c-basic-offset 2)
+
+(defun cpp-tab-size ()
+  (setq c-basic-offset 2)
+  (setq tab-width 2)
+  )
+
+(add-hook 'c++-mode-hook 'cpp-tab-size)
 
 (helm-flx-mode +1)
 (require 'helm-fuzzier)
