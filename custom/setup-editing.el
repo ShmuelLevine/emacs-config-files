@@ -77,11 +77,15 @@
 (setq sp-hybrid-kill-entire-symbol nil)
 (sp-use-paredit-bindings)
 
+;(global-set-key (kbd "M-<left>") 'sp-beginning-of-sexp)
+;(global-set-key (kbd "M-<right>") 'sp-end-of-sexp)
+
+
 (show-smartparens-global-mode +1)
 (smartparens-global-mode 1)
 
 ;; PACKAGE: comment-dwim-2
-(global-set-key (kbd "M-;") 'comment-dwim-2)
+;(global-set-key (kbd "M-;") 'comment-dwim-2)
 
 ;; Jump to end of snippet definition
 (define-key yas-keymap (kbd "<return>") 'yas/exit-all-snippets)
@@ -129,11 +133,11 @@
 ;; PACKAGE: iedit
 (setq iedit-toggle-key-default nil)
 (require 'iedit)
-(global-set-key (kbd "C-;") 'iedit-mode)
+;(global-set-key (kbd "C-;") 'iedit-mode)
 
 ;; PACKAGE: duplicate-thing
 (require 'duplicate-thing)
-(global-set-key (kbd "M-c") 'duplicate-thing)
+;(global-set-key (kbd "M-c") 'duplicate-thing)
 
 ;; Customized functions
 (defun prelude-move-beginning-of-line (arg)
@@ -299,8 +303,8 @@ Position the cursor at it's beginning, according to the current mode."
   (forward-line -1)
   (indent-according-to-mode))
 
-(global-set-key (kbd "M-o") 'prelude-smart-open-line)
-(global-set-key (kbd "M-o") 'open-line)
+;(global-set-key (kbd "M-o") 'prelude-smart-open-line)
+;(global-set-key (kbd "M-o") 'open-line)
 
 (provide 'setup-editing)
 ;;; setup-editing.el ends here

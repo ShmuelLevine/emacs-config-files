@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: boost log severity
+# key: logsev
+# --
+BOOST_LOG_SEV($1, boost::log::trivial::$2) << "$3";$0

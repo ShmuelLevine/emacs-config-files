@@ -1,0 +1,50 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+("DE_Optimizer::Evaluate_Model_and_Fitness"
+ (filename . "~/src/fx_hpx/src/lib/modeling/DE_Optimizer/DE_Optimizer.cc")
+ (front-context-string . "std::vector<floa")
+ (rear-context-string . "zer>(*this);\n}\n\n")
+ (position . 21998))
+("DE_Optimizer::Iterate()"
+ (filename . "~/src/fx_hpx/src/lib/modeling/DE_Optimizer/DE_Optimizer.cc")
+ (front-context-string . "fx::modeling::Op")
+ (rear-context-string . "r_Vector()\";\n}\n\n")
+ (position . 16963))
+("DE_Optimizer::Get_Next_Generation"
+ (filename . "~/src/fx_hpx/src/lib/modeling/DE_Optimizer/DE_Optimizer.cc")
+ (front-context-string . "fx::modeling::DE")
+ (rear-context-string . "arameters_);\n}\n\n")
+ (position . 12347))
+("DE_Optimizer::Prepare_Next_Generation()"
+ (filename . "~/src/fx_hpx/src/lib/modeling/DE_Optimizer/DE_Optimizer.cc")
+ (front-context-string . "void fx::modelin")
+ (rear-context-string . "at>::max());\n}\n\n")
+ (position . 9443))
+("DE_Optimizer::Initialize_Population"
+ (filename . "~/src/fx_hpx/src/lib/modeling/DE_Optimizer/DE_Optimizer.cc")
+ (front-context-string . "void fx::modelin")
+ (rear-context-string . "idx; });\n  }\n}\n\n")
+ (position . 3518))
+("iterator difference"
+ (filename . "~/src/fx_hpx/src/lib/core/Matrix/Matrix.Iterator.cc")
+ (front-context-string . "operator-(matrix")
+ (rear-context-string . "terator<O, P>::\n")
+ (position . 5997))
+("Dist_Fitter::Migrate_Data()"
+ (filename . "~/src/fx_hpx/src/lib/modeling/Distributed_Fitter/Distributed_Fitter.cc")
+ (front-context-string . "fx::modeling::Op")
+ (rear-context-string . "xt migration\n}\n\n")
+ (position . 6099))
+("Dist_Fitter::Compile_Iteration_Stats"
+ (filename . "~/src/fx_hpx/src/lib/modeling/Distributed_Fitter/Distributed_Fitter.cc")
+ (front-context-string . "fx::data::intern")
+ (rear-context-string . "tantiated\");\n}\n\n")
+ (position . 2957))
+("Dist_Fitter::Fit_Model()"
+ (filename . "~/src/fx_hpx/src/lib/modeling/Distributed_Fitter/Distributed_Fitter.cc")
+ (front-context-string . "hpx::util::optio")
+ (rear-context-string . "ata_to_send;\n}\n\n")
+ (position . 6463))
+)

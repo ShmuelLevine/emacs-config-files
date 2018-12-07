@@ -40,6 +40,7 @@
 (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
 ;; Configure irony mode
+(add-to-list 'load-path "~/.emacs.d/elpa/irony-20181013.1454")
 (add-hook 'c++-mode-hook 'irony-mode)
 (add-hook 'c-mode-hook 'irony-mode)
 (add-hook 'objc-mode-hook 'irony-mode)
@@ -65,7 +66,7 @@
 (provide 'setup-environment)
 
 (require 'magit)
-(define-key global-map (kbd "<f9>") 'magit-status)
+;(define-key global-map (kbd "<f9>") 'magit-status)
 (require 'magit-gitflow)
 (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 
@@ -127,8 +128,46 @@
 (add-hook 'c++-mode #'rainbow-delimiters-mode)
 (add-hook 'c++-mode #'rainbow-identifiers-mode)
 
+;; Setup which-function-mode to display the current function in the header row of the current buffer
+;; Show the current function name in the header line
+(which-function-mode)
+(setq-default header-line-format
+              '((which-func-mode ("" which-func-format " "))))
+(setq mode-line-misc-info
+      ;; We remove Which Function Mode from the mode line, because it's mostly
+      ;; invisible here anyway.
+      (assq-delete-all 'which-func-mode mode-line-misc-info))
 
 
+;; highlight-symbol.el
+;; https://github.com/nschum/highlight-symbol.el
+
+(add-to-list 'load-path "~/.emacs.d/custom/highlight-symbol")
+(require 'highlight-symbol)
+;(global-set-key [(control f3)] 'highlight-symbol)
+;(global-set-key [f3] 'highlight-symbol-next)
+;(global-set-key [(shift f3)] 'highlight-symbol-prev)
+;(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
+
+;; Discover
+(discover-add-context-menu
+ :context-menu '(isearch
+                 (description "Isearch, occur and highlighting")
+                 (lisp-switches
+                  ("-cf" "Case should fold search" case-fold-search t nil))
+                 (lisp-arguments
+                  ("=l" "context lines to show (occur)"
+                   "list-matching-lines-default-context-lines"
+                   (lambda (dummy) (interactive) (read-number "Number of context lines to show: "))))
+                 (actions
+                  ("Isearch"
+                   ("_" "isearch forward symbol" isearch-forward-symbol)
+                   ("w" "isearch forward word" isearch-forward-word))
+                  ("Occur"
+                   ("o" "occur" occur))
+                  ("More"
+                   ("h" "highlighters ..." makey-key-mode-popup-isearch-highlight))))
+ :bind "C-c M-d")
 
 (provide 'setup-environment)
 ;;; setup-environment.el ends here

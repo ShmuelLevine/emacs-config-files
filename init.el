@@ -1,3 +1,12 @@
+;;; init.el --- Main custom emacs config file
+
+;;; Commentary:
+; This file and associated files in the ./custom/ directory define my
+; custom configuration for Emacs
+
+
+;;; Code:
+
 (require 'package)
 (add-to-list
 
@@ -35,7 +44,7 @@
 
 ;; magit
 (require 'magit)
-(global-set-key (kbd "<f9>") 'magit-status)
+;(global-set-key (kbd "<f9>") 'magit-status)
 
 ;; Gitflow plugin for Magit.
 
@@ -45,11 +54,11 @@
 ;; C-f in magit status buffer will invoke the gitflow popup.
 (load "/usr/share/emacs/site-lisp/clang-format-5.0/clang-format.el")
 ;(load "/usr/local/share/clang/clang-format.el")
-(global-set-key [C-M-tab] "clang-format-region")
-(global-set-key (kbd "C-x \\") 'clang-format-region)
-(global-set-key (kbd "C-x /") 'clang-format-buffer)
+;(global-set-key [C-M-tab] "clang-format-region")
+;(global-set-key (kbd "C-x \\") 'clang-format-region)
+;(global-set-key (kbd "C-x /") 'clang-format-buffer)
 
-(global-set-key (kbd "<f2>") 'other-window)
+;(global-set-key (kbd "<f2>") 'other-window)
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 
@@ -60,9 +69,10 @@
 (require 'setup-editing)
 (require 'setup-environment)
 (require 'setup-completion)
+(require 'setup-sidebar)
+(require 'setup-keybindings)
+(require 'setup-bookmarks)
 (require 'renumber-tests)
-
-(global-set-key (kbd "<f2>") 'other-window)
 
 (windmove-default-keybindings)
 
@@ -96,7 +106,7 @@
 (global-set-key (kbd "RET") 'newline-and-indent)  ; automatically indent when press RET
 
 ;; activate whitespace-mode to view all whitespace characters
-(global-set-key (kbd "C-c w") 'whitespace-mode)
+;(global-set-key (kbd "C-c w") 'whitespace-mode)
 
 ;; show unncessary whitespace that can mess up your diff
 (add-hook 'prog-mode-hook (lambda () (interactive) (setq show-trailing-whitespace 1)))
@@ -162,11 +172,11 @@
 
 ;; Package: ibuffer-movement-cycle
 (require 'buffer-move)
-(global-set-key (kbd "<C-S-up>")     'buf-move-up)
-(global-set-key (kbd "<C-S-down>")   'buf-move-down)
-(global-set-key (kbd "<C-S-left>")   'buf-move-left)
-(global-set-key (kbd "<S-left>")   'buf-move-left)
-(global-set-key (kbd "<S-right>")  'buf-move-right)
+;(global-set-key (kbd "<C-S-up>")     'buf-move-up)
+;(global-set-key (kbd "<C-S-down>")   'buf-move-down)
+;(global-set-key (kbd "<C-S-left>")   'buf-move-left)
+;(global-set-key (kbd "<S-left>")   'buf-move-left)
+;(global-set-key (kbd "<S-right>")  'buf-move-right)
 
 ;Alternatively, you may let the current window switch back to the previous
 ;buffer, instead of swapping the buffers of both windows. Set the
@@ -211,12 +221,16 @@
    (quote
     ("5c0ac0e7d92102542908459ffd16f3735f556634191d0fa28d8fd98c31d97cc3" default)))
  '(magit-commit-arguments (quote ("--verbose")))
+ '(magit-diff-section-arguments
+   (quote
+    ("--function-context" "--ignore-space-change" "--no-ext-diff")))
  '(package-selected-packages
    (quote
-    (dired-rainbow rainbow-delimiters rainbow-identifiers isearch-symbol-at-point which-key buffer-move zygospore yasnippet yafolding xterm-color ws-butler volatile-highlights undo-tree smartscan smartparens magit-gitflow magit-filenotify magit iy-go-to-char isearch+ image-dired+ image+ iedit helm-swoop helm-projectile helm-gtags helm-gitignore helm-git helm-fuzzier helm-flycheck helm-flx helm-company google-this gitignore-mode git-commit ggtags fuzzy function-args frame-cmds flycheck-irony flycheck expand-line epl embrace duplicate-thing dummyparens dtrt-indent flyspell-lazy flyspell-correct-helm helm-flyspell dired-subtree dired-dups dired-sort dired-filter dired+ digit-groups diffview cmake-project comment-dwim-2 company-flx company-try-hard company-statistics company-irony-c-headers company-irony company-c-headers company cmake-mode clean-buffers clean-aindent-mode bookmark+ autopair anzu ace-jump-mode ace-jump-helm-line ace-isearch)))
+    (discover discover-my-major dash-functional frame-local ov xkcd magit-org-todos magit-todos dired-rainbow rainbow-delimiters rainbow-identifiers isearch-symbol-at-point which-key buffer-move zygospore yafolding xterm-color ws-butler volatile-highlights undo-tree smartscan smartparens magit-gitflow magit-filenotify magit iy-go-to-char isearch+ image-dired+ image+ iedit helm-swoop helm-projectile helm-gtags helm-gitignore helm-git helm-fuzzier helm-flycheck helm-flx helm-company google-this gitignore-mode git-commit ggtags fuzzy function-args frame-cmds flycheck-irony flycheck expand-line epl embrace duplicate-thing dummyparens dtrt-indent flyspell-lazy flyspell-correct-helm helm-flyspell dired-subtree dired-dups dired-sort dired-filter dired+ digit-groups diffview cmake-project comment-dwim-2 company-flx company-try-hard company-statistics company-irony-c-headers company-irony company-c-headers company cmake-mode clean-buffers clean-aindent-mode bookmark+ autopair anzu ace-jump-mode ace-jump-helm-line ace-isearch)))
  '(safe-local-variable-values
    (quote
-    ((projectile-project-compilation-cmd . "cd /home/shmuel/src/fx_hpx/src/build/gcc && make -kj4")
+    ((projectile-project-compilation-cmd . "cd /home/shmuel/src/fx_hpx/src/build/clang && make -kj4")
+     (projectile-project-compilation-cmd . "cd /home/shmuel/src/fx_hpx/src/build/gcc && make -kj4")
      (eval c-set-offset
            (quote innamespace)
            0)))))
@@ -277,8 +291,8 @@ Optional argument ARG sets number of expressions to move."
 
 ;; Custom code to renumber unit tests
 (require 'renumber-tests)
-(global-set-key (kbd "C-c M-s n") 'renumber-tests)
-(global-set-key (kbd "C-c M-s r") 'renumber-tests-auto)
+;(global-set-key (kbd "C-c M-s n") 'renumber-tests)
+;(global-set-key (kbd "C-c M-s r") 'renumber-tests-auto)
 
 ;; Save all auto-save / recovery files in a single directory under the main emacs directory
 ;; instead of the default behaviour of saving autorecovery files in the same directory as

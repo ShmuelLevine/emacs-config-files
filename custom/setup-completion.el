@@ -1,4 +1,10 @@
-;; company
+;;; company --- Configure Company mode for completion
+
+;;; Commentary:
+;custom config for company-mode
+
+
+;;; Code:
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 (delete 'company-semantic company-backends)

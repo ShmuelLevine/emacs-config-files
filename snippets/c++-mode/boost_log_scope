@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: log_scope
+# key: logsc
+# --
+BOOST_LOG_NAMED_SCOPE("$1");$0

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Add fx log entry
+# key: log
+# --
+FX_LOG_ENTRY($1) << "$0"
