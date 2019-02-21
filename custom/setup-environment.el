@@ -51,7 +51,7 @@
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
-(eval-after-load "isearch" '(require 'isearch+))
+;(eval-after-load "isearch" '(require 'isearch+))
 
 (require 'ace-isearch)
 (global-ace-isearch-mode +1)

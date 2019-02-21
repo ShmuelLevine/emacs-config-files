@@ -70,11 +70,11 @@
 (require 'setup-environment)
 (require 'setup-completion)
 (require 'setup-sidebar)
-(require 'setup-keybindings)
 (require 'setup-bookmarks)
 (require 'renumber-tests)
+(require 'setup-keybindings)
 
-(windmove-default-keybindings)
+;(windmove-default-keybindings)
 
 ;; function-args
 
@@ -263,11 +263,11 @@
  '(semantic-highlight-func-current-tag-face ((t (:background "gray90" :foreground "black"))))
  '(semantic-idle-symbol-highlight ((t (:inherit region :foreground "black"))))
  '(shadow ((t (:foreground "#226666"))))
+ '(smerge-lower ((t (:background "#003300"))))
  '(smerge-markers ((t (:background "grey85" :foreground "black"))))
- '(smerge-mine ((t (:background "#660000"))))
- '(smerge-other ((t (:background "#003300"))))
  '(smerge-refined-added ((t (:inherit smerge-refined-change :background "#00b300" :weight ultra-bold))))
  '(smerge-refined-removed ((t (:inherit smerge-refined-change :background "#b30000"))))
+ '(smerge-upper ((t (:background "#660000"))))
  '(sp-pair-overlay-face ((t (:inherit highlight :foreground "black"))))
  '(speedbar-highlight-face ((t (:background "green" :foreground "black"))))
  '(whitespace-space ((t (:foreground "blue1" :underline (:color foreground-color :style wave))))))
@@ -300,6 +300,11 @@ Optional argument ARG sets number of expressions to move."
 
 (setq backup-directory-alist
       `(("." . ,(concat user-emacs-directory "backups"))))
+
+;; Stop semantic from constantly reparsing!
+(setq semantic-idle-scheduler-idle-time 30)
+;(setq semantic-idle-scheduler-queue 30)
+;(setq semantic-idle-scheduler-timer 30)
 
 
 (provide 'init)
