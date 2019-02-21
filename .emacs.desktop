@@ -1,0 +1,523 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Mon Dec 10 01:42:33 2018
+;; Desktop file format version 208
+;; Emacs version 25.2.2
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (23566 2777 193637 857000) (desktop . "208") "shmuel@dev" nil nil ((((foreground-color . "unspecified-bg") (background-color . "unspecified-fg") (display-type . mono) (background-mode . light) (cursor-color . "black") (font . "tty") (height . 9) (width . 10) (modeline . t) (unsplittable) (menu-bar-lines . 1) (reverse . t) (frameset--id . "7EAE-6E04-699A-962D") (frameset--mini t) (minibuffer . t)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 2) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 4) (min-pixel-width . 10) (min-pixel-height-ignore . 3) (min-pixel-width-ignore . 2) (min-pixel-height-safe . 1) (min-pixel-width-safe . 2)) leaf (pixel-width . 10) (pixel-height . 8) (total-width . 10) (total-height . 8) (normal-height . 1.0) (normal-width . 1.0) (buffer "*scratch*" (selected . t) (hscroll . 0) (fringes 0 0 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 145) (start . 1))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("static"))
+(setq regexp-search-ring nil)
+(setq register-alist (list (list "zygospore-windows-time-machine" "Unprintable entity" (let ((mk (make-marker))) (add-hook 'desktop-delay-hook `(lambda nil (set-marker ,mk ,2241 (get-buffer ,"Fitter_Stats_Formatted_Output.cc")))) mk))))
+(setq file-name-history '("~/src/fx_hpx/src/lib/modeling/Migration_Policy/CMakeLists.txt" "~/src/fx_hpx/src/lib/modeling/Model_Fitter/CMakeLists.txt" "~/src/fx_hpx/src/lib/modeling/DE_Optimizer/DE_State.hpp" "~/src/fx_hpx/src/lib/modeling/Optimizer/Optimizer_State.hpp" "~/.emacs.d/custom/setup-cedet.el" "~/src/fx_hpx/src/lib/data/Filesystem_Storage.hpp" "~/src/fx_hpx/src/lib/data/Fitter_Stats/Fitter_Stats.cc" "~/.emacs.d/init.el" "~/src/fx_hpx/src/lib/data/Fitter_Stats/CMakeLists.txt" "~/src/fx_hpx/src/lib/data/Fitter_Stats/Fitter_Stats_CSV_Output.cc" "~/src/fx_hpx/src/lib/data/Fitter_Stats/Fitter_Stats_CSV_Output.hpp" "~/src/fx_hpx/src/lib/data/Fitter_Stats/Fitter_Stats_Formatted_Output.hpp" "~/src/fx_hpx/src/lib/config/model_options" "~/src/fx_hpx/src/lib/modeling/Model_Fitter/Model_Fitter_Builder.cc" "~/src/fx_hpx/src/lib/modeling/Distributed_Fitter/Distributed_Fitter.hpp" "/home/shmuel/src/fx_hpx/src/lib/modeling/Model_Fitter/Model_Fitter.cc"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/Distributed_Fitter/Distributed_Fitter.cc"
+  "Distributed_Fitter.cc"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  8525
+  '(10812 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (8483 8333 8260 6873 7972 7604 6993 876 8525 6987 6987 8754 8525))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/Migration_Policy/CMakeLists.txt"
+  "CMakeLists.txt"
+  'cmake-mode
+  '(auto-revert-mode magit-file-mode helm-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode projectile-mode flycheck-mode)
+  510
+  '(819 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/Optimizer/Optimizer_State.hpp"
+  "Optimizer_State.hpp"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  2028
+  '(1993 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1983 1999 2758 2189 2758))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/DE_Optimizer/DE_State.hpp"
+  "DE_State.hpp"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1372
+  '(2320 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/Migration_Policy/Migration_Trigger_Iteration.cc"
+  "Migration_Trigger_Iteration.cc"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  580
+  '(nil nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/data/Filesystem_Storage.cc"
+  "Filesystem_Storage.cc"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  8979
+  '(10535 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (8714 8907 8620 8208 8204 8338 8193 7534 7534 7534 7534 7534 7534 7534 7534 7534 7534 7534 7534 7534 7534 7236 7276 7534 6777 6416 7534 3052 3076 3571 7530 7230 7534 7531 223 7534 7534 7534 7534 7534 7534 9807 8980 8979))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/data/Fitter_Stats/Fitter_Stats_Formatted_Output.cc"
+  "Fitter_Stats_Formatted_Output.cc"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1090
+  '(1631 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (999 506 586 527 1 765 1947 1947 3057 2770 3367 3005 3260 2847 2391 2558 3016 2919 2294 2919 1817 662 2968 598 1188 1329 1897 1862 2241 1897 1909 1201 1091 152 116 1748 2290 2209 2167 2211 2209 2140 1654 1773 2968 3062 2748 3016 3004 3419 2968 3060 3061 2968 2968 2968 2968 2806 3070 3258 3081 3061 2872 1997 1676 1951 1971 2797 2846 3080 2918 3081 3016 3061 3061 3061 3004 3057 93 2390 1087 1090))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/Model_Fitter/Model_Fitter.cc"
+  "Model_Fitter.cc"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  9803
+  '(9732 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (10965 11528 11528 11528 11528 11528 11528 11528))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/data/Filesystem_Storage.hpp"
+  "Filesystem_Storage.hpp"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  2105
+  '(1484 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/data/Storage_Driver.hpp"
+  "Storage_Driver.hpp"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  3280
+  '(nil nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/data/Storage_Driver.cc"
+  "Storage_Driver.cc"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  266
+  '(595 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1306))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/data/Fitter_Stats/Fitter_Stats_Formatted_Output.hpp"
+  "Fitter_Stats_Formatted_Output.hpp"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1523
+  '(1441 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1300 1355 1265 1490 1399 1441 1579 1))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/data/Fitter_Stats/Fitter_Stats.hpp"
+  "Fitter_Stats.hpp"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  2730
+  '(2697 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1632 2685))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/data/Fitter_Stats/Fitter_Stats.cc"
+  "Fitter_Stats.cc"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  2451
+  '(2711 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (2698 2571 2514))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/Model_Fitter/Model_Fitter_Builder.cc"
+  "Model_Fitter_Builder.cc"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  14723
+  '(14840 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (14840 14643 14591 3860 920 3388 3714))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/Model_Fitter/Model_Fitter_UI.hpp"
+  "Model_Fitter_UI.hpp"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1585
+  '(nil nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/Model_Fitter/Model_Fitter_UI.cc"
+  "Model_Fitter_UI.cc"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  586
+  '(1486 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1792 1595 1663 1098 1349 1433 1486 1491 231 438 7907 7876 7843 7645 1 7655 7386 1348 817 3789 1401 1485))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/.emacs.d/custom/setup-cedet.el"
+  "setup-cedet.el"
+  'emacs-lisp-mode
+  '(auto-revert-mode magit-file-mode helm-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode projectile-mode flycheck-mode)
+  533
+  '(nil nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/data/Fitter_Stats/CMakeLists.txt"
+  "CMakeLists.txt"
+  'cmake-mode
+  '(auto-revert-mode magit-file-mode helm-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode projectile-mode flycheck-mode)
+  116
+  '(92 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (129))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/data/Fitter_Stats/Fitter_Stats_CSV_Output.hpp"
+  "Fitter_Stats_CSV_Output.hpp"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1
+  '(1346 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/Cost_Functions/Cost_Function_Builder.cc"
+  "Cost_Function_Builder.cc"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  576
+  '(190 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (576))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/data/Model_Output_JSON_Converter.hpp"
+  "Model_Output_JSON_Converter.hpp"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  71
+  '(681 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (20 35))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/Distributed_Fitter/Distributed_Fitter.hpp"
+  "Distributed_Fitter.hpp"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1584
+  '(1675 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1693 1584))))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/Model_Fitter/Model_Fitter.hpp"
+  "Model_Fitter.hpp"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/Model_Fitter/Model_Fitter_Builder.hpp"
+  "Model_Fitter_Builder.hpp"
+  'fundamental-mode
+  '(auto-revert-mode magit-file-mode helm-mode volatile-highlights-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode projectile-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/Cost_Functions/Cost_Function_Builder.hpp"
+  "Cost_Function_Builder.hpp"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/Cost_Functions/RMSE.hpp"
+  "RMSE.hpp"
+  'fundamental-mode
+  '(auto-revert-mode magit-file-mode helm-mode volatile-highlights-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode projectile-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/usr/include/c++/8/bits/atomic_futex.h"
+  "atomic_futex.h"
+  'c++-mode
+  '(abbrev-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1
+  '(nil nil)
+  t
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/usr/include/c++/8/bits/stl_tempbuf.h"
+  "stl_tempbuf.h"
+  'c++-mode
+  '(abbrev-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1
+  '(nil nil)
+  t
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/usr/include/c++/8/bits/exception.h"
+  "exception.h"
+  'c++-mode
+  '(abbrev-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1
+  '(nil nil)
+  t
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/usr/include/c++/8/bits/locale_facets.h"
+  "locale_facets.h"
+  'c++-mode
+  '(abbrev-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1
+  '(nil nil)
+  t
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h"
+  "__locale_t.h"
+  'fundamental-mode
+  '(helm-mode volatile-highlights-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode projectile-mode)
+  1
+  '(nil nil)
+  t
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/usr/include/c++/8/cerrno"
+  "cerrno"
+  'fundamental-mode
+  '(helm-mode volatile-highlights-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode projectile-mode)
+  1
+  '(nil nil)
+  t
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/usr/include/time.h"
+  "time.h"
+  'c-mode
+  '(abbrev-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1
+  '(nil nil)
+  t
+  nil
+  '((show-trailing-whitespace . 1) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h"
+  "struct_timespec.h"
+  'c-mode
+  '(abbrev-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1
+  '(nil nil)
+  t
+  nil
+  '((show-trailing-whitespace . 1) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/usr/include/x86_64-linux-gnu/bits/types/time_t.h"
+  "time_t.h"
+  'c-mode
+  '(abbrev-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1
+  '(nil nil)
+  t
+  nil
+  '((show-trailing-whitespace . 1) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/usr/include/x86_64-linux-gnu/bits/time.h"
+  "time.h"
+  'c-mode
+  '(abbrev-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1
+  '(nil nil)
+  t
+  nil
+  '((show-trailing-whitespace . 1) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h"
+  "thread-shared-types.h"
+  'c-mode
+  '(abbrev-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1
+  '(nil nil)
+  t
+  nil
+  '((show-trailing-whitespace . 1) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/usr/include/stdio.h"
+  "stdio.h"
+  'fundamental-mode
+  '(helm-mode volatile-highlights-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode projectile-mode)
+  1
+  '(nil nil)
+  t
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/usr/include/c++/8/ext/concurrence.h"
+  "concurrence.h"
+  'fundamental-mode
+  '(helm-mode volatile-highlights-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode projectile-mode)
+  1
+  '(nil nil)
+  t
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/shmuel/src/fx_hpx/src/lib/modeling/Migration_Policy/Migration_Trigger_Iteration.hpp"
+  "Migration_Trigger_Iteration.hpp"
+  'c++-mode
+  '(abbrev-mode auto-revert-mode magit-file-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  895
+  '(nil nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/usr/include/c++/8/bits/alloc_traits.h"
+  "alloc_traits.h"
+  'c++-mode
+  '(abbrev-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode ace-isearch-mode which-key-mode company-mode irony-mode projectile-mode function-args-mode flycheck-mode hs-minor-mode)
+  1
+  '(nil nil)
+  t
+  nil
+  '((show-trailing-whitespace . 1) (tab-width . 2) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
