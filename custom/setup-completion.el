@@ -9,6 +9,7 @@
 (add-hook 'after-init-hook 'global-company-mode)
 (delete 'company-semantic company-backends)
 (delete 'company-capf company-backends)
+(push 'company-lsp company-backends)
                                         ;(define-key c-mode-map  [(tab)] 'company-complete)
                                         ;(define-key c++-mode-map  [(tab)] 'company-complete)
 ;; (define-key c-mode-map  [(control tab)] 'company-complete)
@@ -32,9 +33,11 @@
 ;; Set default backends for company auto-complete
 (defun cpp-company-backends()
 (setq-local company-backends       '(
-                               (company-irony-c-headers
-                                company-irony
-                                )
+                               ;; (company-irony-c-headers
+                               ;;  company-irony
+                                     ;;  )
+                                     company-lsp
+                                     company-irony-c-headers
                                company-gtags
                                (company-files          ; files & directory
                                 company-keywords       ; keywords
@@ -50,9 +53,9 @@
 ;; Load with `irony-mode` as a grouped backend
 (eval-after-load 'company
   '(add-to-list
-    'company-backends '(company-irony-c-headers company-irony)))
+    'company-backends '(company-lsp company-irony-c-headers company-irony)))
 
-(global-set-key (kbd "M-i") 'company-irony)
+(global-set-key (kbd "M-i") 'company-lsp)
 
 (add-hook 'c++-mode-hook 'cpp-company-backends)
 

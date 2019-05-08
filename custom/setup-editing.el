@@ -1,3 +1,12 @@
+;;; Setup-Editing.el --- Configure editing basics
+
+;;; Commentary:
+
+;; This file sets up various packages and settings related to the editing functionality in Emacs
+
+;;; Code:
+
+
 ;; GROUP: Editing -> Editing Basics
 
 (setq global-mark-ring-max 5000         ; increase mark ring to contains 5000 entries
@@ -71,55 +80,69 @@
 (yas-global-mode 1)
 
 ;; PACKAGE: smartparens
-(require 'smartparens-config)
-(setq sp-base-key-bindings 'paredit)
+(require 'smartparens)
+;(setq sp-base-key-bindings 'paredit)
 (setq sp-autoskip-closing-pair 'always)
-(setq sp-hybrid-kill-entire-symbol nil)
-(sp-use-paredit-bindings)
+;(setq sp-hybrid-kill-entire-symbol nil)
+                                        ;(sp-use-paredit-bindings)
+
 
 ;(global-set-key (kbd "M-<left>") 'sp-beginning-of-sexp)
 ;(global-set-key (kbd "M-<right>") 'sp-end-of-sexp)
 
+(use-package smartparens-config
+             :ensure smartparens
+             :config
+             (progn
+               (show-smartparens-global-mode t)
+               (sp-base-key-bindings 'paredit)
+               (sp-autoskip-closing-pair 'always)
+               (sp-hybrid-kill-entire-symbol nil)
+               (smartparens-global-mode 1)
+               (show-paren-mode 1)
+               )
+             :hook ((prog-mode markdown-mode ) . turn-on-smartparens-mode)
+             )
+;; (add-hook 'prog-mode-hook 'turn-on-smartparens-mode)
+;; (add-hook 'markdown-mode-hook 'turn-on-smartparens-mode)
 
-(show-smartparens-global-mode +1)
-(smartparens-global-mode 1)
 
 ;; PACKAGE: comment-dwim-2
 ;(global-set-key (kbd "M-;") 'comment-dwim-2)
 
 ;; Jump to end of snippet definition
-(define-key yas-keymap (kbd "<return>") 'yas/exit-all-snippets)
+;; (define-key yas-keymap (kbd "<return>") 'yas/exit-all-snippets)
 
 ;; Inter-field navigation
-(defun yas/goto-end-of-active-field ()
-  (interactive)
-  (let* ((snippet (car (yas--snippets-at-point)))
-         (position (yas--field-end (yas--snippet-active-field snippet))))
-    (if (= (point) position)
-        (move-end-of-line 1)
-      (goto-char position))))
+;; (defun yas/goto-end-of-active-field ()
+;;   (interactive)
+;;   (let* ((snippet (car (yas--snippets-at-point)))
+;;          (position (yas--field-end (yas--snippet-active-field snippet))))
+;;     (if (= (point) position)
+;;         (move-end-of-line 1)
+;;       (goto-char position))))
 
-(defun yas/goto-start-of-active-field ()
-  (interactive)
-  (let* ((snippet (car (yas--snippets-at-point)))
-         (position (yas--field-start (yas--snippet-active-field snippet))))
-    (if (= (point) position)
-        (move-beginning-of-line 1)
-      (goto-char position))))
+;; (defun yas/goto-start-of-active-field ()
+;;   (interactive)
+;;   (let* ((snippet (car (yas--snippets-at-point)))
+;;          (position (yas--field-start (yas--snippet-active-field snippet))))
+;;     (if (= (point) position)
+;;         (move-beginning-of-line 1)
+;;       (goto-char position))))
 
-(define-key yas-keymap (kbd "C-e") 'yas/goto-end-of-active-field)
-(define-key yas-keymap (kbd "C-a") 'yas/goto-start-of-active-field)
+;; (define-key yas-keymap (kbd "C-e") 'yas/goto-end-of-active-field)
+;; (define-key yas-keymap (kbd "C-a") 'yas/goto-start-of-active-field)
 ;; (define-key yas-minor-mode-map [(tab)] nil)
 ;; (define-key yas-minor-mode-map (kbd "TAB") nil)
 ;; (define-key yas-minor-mode-map (kbd "C-<tab>") 'yas-expand)
 ;; No dropdowns please, yas
-(setq yas-prompt-functions '(yas/ido-prompt yas/completing-prompt))
+;; (setq yas-prompt-functions '(yas/ido-prompt yas/completing-prompt))
 
-;; No need to be so verbose
-(setq yas-verbosity 1)
+;; ;; No need to be so verbose
+;; (setq yas-verbosity 1)
 
-;; Wrap around region
-(setq yas-wrap-around-region t)
+;; ;; Wrap around region
+;; (setq yas-wrap-around-region t)
 
 (add-hook 'term-mode-hook (lambda() (setq yas-dont-activate t)))
 

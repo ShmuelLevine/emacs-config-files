@@ -40,16 +40,40 @@
 (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
 ;; Configure irony mode
-(add-to-list 'load-path "~/.emacs.d/elpa/irony-20181013.1454")
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'c-mode-hook 'irony-mode)
-(add-hook 'objc-mode-hook 'irony-mode)
-(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+;; (add-to-list 'load-path "~/.emacs.d/elpa/irony-20190125.1234")
+;; (add-hook 'c++-mode-hook 'irony-mode)
+;; (add-hook 'c-mode-hook 'irony-mode)
+;; (add-hook 'objc-mode-hook 'irony-mode)
+;; (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+;; Configure emacs-ycmd
+;(add-to-list 'load-path "~/.emacs.d/custom/emacs-ycmd")
+;; (require 'ycmd)
+;; (add-hook 'after-init-hook #'global-ycmd-mode)
+;; (set-variable 'ycmd-server-command '("python" "/usr/src/ycmd/ycmd"))
+;; (require 'company-ycmd)
+;; (company-ycmd-setup)
+;; (require 'flycheck-ycmd)
+;; (flycheck-ycmd-setup)
+
+(use-package lsp-mode :commands lsp)
+(use-package lsp-ui :commands lsp-ui-mode)
+(use-package company-lsp :commands company-lsp)
+
+(use-package ccls
+  :hook ((c-mode c++-mode objc-mode) .
+         (lambda () (require 'ccls) (lsp))))
+(setq ccls-executable "/usr/local/bin/ccls")
+(setq lsp-prefer-flymake nil)
+(setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-cppcheck c/c++-gcc))
+
+;(push 'company-lsp company-backends)
+
 
 ; enable flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
-(eval-after-load 'flycheck
-  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+;; (eval-after-load 'flycheck
+;;   '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
 ;(eval-after-load "isearch" '(require 'isearch+))
 
@@ -62,8 +86,6 @@
      (define-key company-active-map (kbd "C-:") 'helm-company)))
 
 
-
-(provide 'setup-environment)
 
 (require 'magit)
 ;(define-key global-map (kbd "<f9>") 'magit-status)
@@ -79,10 +101,12 @@
 ;  (company-flx-mode +1))
 
 ;; dired+
-
+;; (require 'dired+)
 (require 'dired-dups)
 (require 'dired-sort)
-
+(require 'dired-rainbow)
+(require 'discover-my-major)
+(global-set-key (kbd "C-h S-m") 'discover-my-major)
 
 ;; disk operations
 (global-set-key (kbd "<f8>") 'disk)
@@ -169,5 +193,24 @@
                    ("h" "highlighters ..." makey-key-mode-popup-isearch-highlight))))
  :bind "C-c M-d")
 
+(add-to-list 'load-path "~/.emacs.d/elpa/ace-window-20190219.947")
+(add-to-list 'load-path "~/.emacs.d/elpa/avy-20190204.1201")
+(require 'ace-window)
+(global-set-key (kbd "M-o") 'ace-window)
+
+
+(require 'git-gutter)
+(global-git-gutter-mode +1)
+;; (linum-mode nil)
+;; (git-gutter:linum-setup)
+
+;; (add-to-list 'load-path "~/.emacs.d/custom/rtags/src/")
+;; (setq rtags-path "~/.emacs.d/custom/rtags/bin/")
+;; (require 'rtags)
+;; (require 'helm-rtags)
+;; (require 'company-rtags)
+;; (require 'flycheck-rtags)
+;; (setq rtags-completions-enabled t)
+;; (push 'company-rtags company-backends)
 (provide 'setup-environment)
 ;;; setup-environment.el ends here
