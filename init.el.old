@@ -1,0 +1,108 @@
+
+;(install-packages)
+
+;; this variables must be set before load helm-gtags
+;; you can change to any prefix key of your choice
+(setq helm-gtags-prefix-key "\C-c g")
+
+;; Set the 'reverse-video' option, which should apply to all new
+;; frames created by emacs
+(setq default-frame-alist
+      (cons (cons 'reverse t) default-frame-alist))
+
+
+;(load "/usr/local/share/clang/clang-format.el")
+;(global-set-key [C-M-tab] "clang-format-region")
+;(global-set-key (kbd "C-x \\") 'clang-format-region)
+;(global-set-key (kbd "C-x /") 'clang-format-buffer)
+
+;(global-set-key (kbd "<f2>") 'other-window)
+
+
+(require 'use-package)
+(require 'setup-helm)
+;(require 'setup-helm-gtags)
+;; (require 'setup-ggtags)
+;; (require 'setup-cedet)
+(require 'setup-editing)
+(require 'setup-environment)
+(require 'setup-completion)
+(require 'setup-sidebar)
+(require 'setup-bookmarks)
+(require 'renumber-tests)
+(require 'setup-keybindings)
+
+
+;(windmove-default-keybindings)
+
+;; function-args
+
+ (require 'function-args)
+ (fa-config-default)
+;; (define-key c-mode-map  [(tab)] 'company-complete)
+;; (define-key c++-mode-map  [(tab)] 'company-complete)
+
+
+
+;; hs-minor-mode for folding source code
+(add-hook 'c-mode-common-hook 'hs-minor-mode)
+
+;(
+
+
+;; set appearance of a tab that is represented by 4 spaces
+;; (setq-default tab-width 4)
+
+
+;; Package: clean-aindent-mode
+;(require 'clean-aindent-mode)
+;(add-hook 'prog-mode-hook 'clean-aindent-mode)
+
+
+;; Package: projectile
+
+;; Package: ibuffer-movement-cycle
+
+;Alternatively, you may let the current window switch back to the previous
+;buffer, instead of swapping the buffers of both windows. Set the
+;following customization variable to 'move to activate this behavior:
+
+
+
+;;(custom-set-variables
+;; ;; custom-set-variables was added by Custom.
+;; ;; If you edit it by hand, you could mess it up, so be careful.
+;; ;; Your init file should contain only one such instance.
+;; ;; If there is more than one, they won't work right.
+;; '(magit-commit-arguments (quote ("--verbose")))
+;; '(safe-local-variable-values (quote ((eval c-set-offset (quote innamespace) 0)))))
+;;(custom-set-faces
+;; ;; custom-set-faces was added by Custom.
+;; ;; If you edit it by hand, you could mess it up, so be careful.
+;; ;; Your init file should contain only one such instance.
+;; ;; If there is more than one, they won't work right.
+;; '(company-tooltip ((t (:background "#0087ff" :foreground "brightwhite"))))
+;; '(diff-added ((t (:inherit diff-changed :background "#226666"))))
+;; '(diff-changed ((t (:foreground "white"))))
+;; '(diff-file-header ((t (:weight ultra-bold))))
+;; '(diff-header ((t (:background "#407f7f"))))
+;; '(diff-removed ((t (:inherit diff-changed :background "#aa3939"))))
+;; '(link ((t (:foreground "cyan" :underline t))))
+;; '(magit-diff-added ((t (:background "Plum" :foreground "gray30" :weight extra-bold))))
+;; '(magit-diff-added-highlight ((t (:background "#cceecc" :foreground "black"))))
+;; '(magit-section-heading ((t (:foreground "PaleGoldenrod" :weight bold))))
+;; '(minibuffer-prompt ((t (:foreground "green"))))
+;; '(shadow ((t (:foreground "#226666"))))
+;; '(whitespace-space ((t (:foreground "blue1" :underline (:color foreground-color :style wave))))))
+;;
+
+
+
+
+
+
+;; Custom code to renumber unit tests
+;; (require 'renumber-tests)
+;(global-set-key (kbd "C-c M-s n") 'renumber-tests)
+;(global-set-key (kbd "C-c M-s r") 'renumber-tests-auto)
+

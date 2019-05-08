@@ -125,15 +125,5 @@
 (require 'helm-describe-modes)
 (global-set-key [remap describe-mode] #'helm-describe-modes)
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; PACKAGE: helm-fuzzier              ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(helm-flx-mode +1)
-(require 'helm-fuzzier)
-(helm-fuzzier-mode 1)
-
-
-
 (provide 'setup-helm)
 ;;; setup-helm.el ends here

@@ -25,6 +25,7 @@
 
 (setq-default indent-tabs-mode nil)
 (delete-selection-mode)
+(global-set-key (kbd "RET") 'newline-and-indent)
 
 ;; GROUP: Editing -> Killing
 (setq kill-ring-max 5000 ; increase kill-ring capacity
@@ -46,6 +47,10 @@
                                           newline-mark))
                             (whitespace-mode 1)))
 
+;; Package: volatile-highlights
+;; GROUP: Editing -> Volatile Highlights
+(require 'volatile-highlights)
+(volatile-highlights-mode t)
 
 ;; Package: clean-aindent-mode
 ;; GROUP: Editing -> Indent -> Clean Aindent
@@ -53,11 +58,31 @@
 ;(add-hook 'prog-mode-hook 'clean-aindent-mode)
 
 
+;; PACKAGE: dtrt-indent
+(require 'dtrt-indent)
+(dtrt-indent-mode 1)
+(setq dtrt-indent-verbosity 0)
+
+;; PACKAGE: ws-butler
+(require 'ws-butler)
+(add-hook 'c-mode-common-hook 'ws-butler-mode)
+(add-hook 'text-mode 'ws-butler-mode)
+(add-hook 'fundamental-mode 'ws-butler-mode)
+
+;; Package: undo-tree
+;; GROUP: Editing -> Undo -> Undo Tree
+(require 'undo-tree)
+(global-undo-tree-mode)
+
+;; Package: yasnippet
+;; GROUP: Editing -> Yasnippet
+(require 'yasnippet)
+(yas-global-mode 1)
 
 ;; PACKAGE: smartparens
-;(require 'smartparens)
+(require 'smartparens)
 ;(setq sp-base-key-bindings 'paredit)
-;()
+(setq sp-autoskip-closing-pair 'always)
 ;(setq sp-hybrid-kill-entire-symbol nil)
                                         ;(sp-use-paredit-bindings)
 
@@ -65,7 +90,19 @@
 ;(global-set-key (kbd "M-<left>") 'sp-beginning-of-sexp)
 ;(global-set-key (kbd "M-<right>") 'sp-end-of-sexp)
 
-
+(use-package smartparens-config
+             :ensure smartparens
+             :config
+             (progn
+               (show-smartparens-global-mode t)
+               (sp-base-key-bindings 'paredit)
+               (sp-autoskip-closing-pair 'always)
+               (sp-hybrid-kill-entire-symbol nil)
+               (smartparens-global-mode 1)
+               (show-paren-mode 1)
+               )
+             :hook ((prog-mode markdown-mode ) . turn-on-smartparens-mode)
+             )
 ;; (add-hook 'prog-mode-hook 'turn-on-smartparens-mode)
 ;; (add-hook 'markdown-mode-hook 'turn-on-smartparens-mode)
 
@@ -109,6 +146,21 @@
 
 (add-hook 'term-mode-hook (lambda() (setq yas-dont-activate t)))
 
+;; PACKAGE: anzu
+;; GROUP: Editing -> Matching -> Isearch -> Anzu
+(require 'anzu)
+(global-anzu-mode)
+(global-set-key (kbd "M-%") 'anzu-query-replace)
+(global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
+
+;; PACKAGE: iedit
+(setq iedit-toggle-key-default nil)
+(require 'iedit)
+;(global-set-key (kbd "C-;") 'iedit-mode)
+
+;; PACKAGE: duplicate-thing
+(require 'duplicate-thing)
+;(global-set-key (kbd "M-c") 'duplicate-thing)
 
 ;; Customized functions
 (defun prelude-move-beginning-of-line (arg)

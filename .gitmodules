@@ -4,3 +4,9 @@
 [submodule "old_emacs-ycmd"]
 	path = custom/old_emacs-ycmd
 	url = https://github.com/abingham/emacs-ycmd.git
+[submodule "custom/all-the-icons"]
+	path = custom/all-the-icons
+	url = https://github.com/domtronn/all-the-icons.el.git
+#[submodule "custom/all-the-icons"]
+#	path = custom/all-the-icons
+#	url = ./custom/all-the-icons/

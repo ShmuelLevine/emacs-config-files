@@ -6,10 +6,50 @@
 
 ;;; Code:
 
+
 ;; Sidebar
 (global-set-key (kbd "C-x l") 'sidebar-buffers-open)
 ;; (previously count-lines-page)
 
+
+;; Shmuel Custom
+;; (global-set-key (kbd "C-c r") 'string-insert-rectangle)
+
+
+;; highlight-symbol
+(global-set-key [(control f3)] 'highlight-symbol)
+(global-set-key [f3] 'highlight-symbol-next)
+(global-set-key [(shift f3)] 'highlight-symbol-prev)
+(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
+
+;; lsp-mode
+(global-set-key (kbd "M-.") 'lsp-find-definition)
+(global-set-key (kbd "C-.") 'lsp-find-references)
+
+;; magit
+(global-set-key (kbd "<f9>") 'magit-status)
+
+;; clang-format
+(global-set-key [C-M-tab] "clang-format-region")
+(global-set-key (kbd "C-x \\") 'clang-format-region)
+(global-set-key (kbd "C-x /") 'clang-format-buffer)
+
+; misc. motion
+(global-set-key (kbd "<f2>") 'other-window)
+
+;; activate whitespace-mode to view all whitespace characters
+(global-set-key (kbd "C-c w") 'whitespace-mode)
+
+;; Package: ibuffer-movement-cycle
+(global-set-key (kbd "<C-S-up>")     'buf-move-up)
+(global-set-key (kbd "<C-S-down>")   'buf-move-down)
+(global-set-key (kbd "<C-S-left>")   'buf-move-left)
+;(global-set-key (kbd "<S-left>")   'buf-move-left)
+(global-set-key (kbd "<C-S-right>")  'buf-move-right)
+
+;; Custom code to renumber unit tests
+(global-set-key (kbd "C-c M-s n") 'renumber-tests)
+(global-set-key (kbd "C-c M-s r") 'renumber-tests-auto)
 
 ;; PACKAGE: smartparens
 
@@ -57,6 +97,7 @@
 (setq shmuel-cpp-map (make-sparse-keymap))
 (define-key shmuel-cpp-map (kbd "C-M-S-o") 'split-line)
 (define-key shmuel-cpp-map (kbd "C-M-o") 'moo-complete)
+(define-key shmuel-cpp-map (kbd "M-o") 'other-window)
 (defun setup-shmuel-cpp-map() "Setup custom keybindings for c++."
        (set-keymap-parent shmuel-cpp-map shmuel-smartparens-mode-map)
        (use-local-map shmuel-cpp-map)
@@ -67,7 +108,24 @@
 
 ;; (use-local-map shmuel-smartparens-mode-map)
 
+;; PACKAGE: comment-dwim-2
+(global-set-key (kbd "M-;") 'comment-dwim-2)
 
+;; PACKAGE: duplicate-thing
+(global-set-key (kbd "M-c") 'duplicate-thing)
+
+;; PACKAGE: iedit
+(global-set-key (kbd "C-;") 'iedit-mode)
+
+;; Open line
+(global-set-key (kbd "M-o") 'prelude-smart-open-line)
+(global-set-key (kbd "M-o") 'open-line)
+
+;; ace-jump-mode
+(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+
+;; ace-window
+;; (define-key function-args-mode-map (kbd "M-o") 'ace-window)
 
 
 ;; GGtags -- Refer to setup-ggtags.el
