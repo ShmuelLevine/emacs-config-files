@@ -9,3 +9,5 @@ recentf
 .\#*
 session.*projecile.cache
 projectile.cache
+.cache
+.lsp-session-v1
