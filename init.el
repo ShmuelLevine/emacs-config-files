@@ -25,6 +25,148 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("b9e9ba5aeedcc5ba8be99f1cc9301f6679912910ff92fdf7980929c2fc83ab4d" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "5c0ac0e7d92102542908459ffd16f3735f556634191d0fa28d8fd98c31d97cc3" default)))
+ '(magit-commit-arguments (quote ("--verbose")))
+ '(magit-diff-arguments
+   (quote
+    ("--no-ext-diff" "--stat" "--diff-algorithm=patience")))
+ '(magit-diff-section-arguments
+   (quote
+    ("--function-context" "--ignore-space-change" "--no-ext-diff")))
+ '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "--stat" "-n256")))
+ '(package-selected-packages
+   (quote
+    (smart-mode-line-powerline-theme smart-mode-line try yatemplate shut-up buttercup auto-yasnippet helm-c-yasnippet ivy-yasnippet yasnippet yasnippet-snippets lsp-treemacs ccls company-lsp helm-lsp lsp-clangd lsp-mode lsp-ui ace-window company-ycmd flycheck-ycmd ycmd git-gutter git-timemachine gitconfig-mode irony deferred request-deferred helm-bind-key helm-descbinds helm-describe-modes use-package discover discover-my-major dash-functional frame-local ov xkcd magit-org-todos magit-todos dired-rainbow rainbow-delimiters rainbow-identifiers isearch-symbol-at-point which-key buffer-move zygospore yafolding xterm-color ws-butler volatile-highlights undo-tree smartscan smartparens magit-gitflow magit-filenotify magit iy-go-to-char isearch+ image-dired+ image+ iedit helm-swoop helm-projectile helm-gtags helm-gitignore helm-git helm-fuzzier helm-flycheck helm-flx helm-company google-this gitignore-mode git-commit ggtags fuzzy function-args frame-cmds flycheck-irony flycheck expand-line epl embrace duplicate-thing dummyparens dtrt-indent flyspell-lazy flyspell-correct-helm helm-flyspell dired-subtree dired-dups dired-sort dired-filter dired+ digit-groups diffview cmake-project comment-dwim-2 company-flx company-try-hard company-statistics company-irony-c-headers company-irony company-c-headers company cmake-mode clean-buffers clean-aindent-mode bookmark+ autopair anzu ace-jump-mode ace-jump-helm-line ace-isearch)))
+ '(rtags-socket-file "/home/shmuel/.rdm")
+ '(safe-local-variable-values
+   (quote
+    ((projectile-project-compilation-cmd . "cd /home/shmuel/src/fx_hpx/src/build/clang && make -kj4")
+     (projectile-project-compilation-cmd . "cd /home/shmuel/src/fx_hpx/src/build/gcc && make -kj4")
+     (eval c-set-offset
+           (quote innamespace)
+           0))))
+ '(smartparens-global-mode t)
+ '(smartparens-global-strict-mode nil)
+ '(sml/mode-width
+   (if
+       (eq
+        (powerline-current-separator)
+        (quote arrow))
+       (quote right)
+     (quote full)))
+ '(sml/no-confirm-load-theme t)
+ '(sml/pos-id-separator
+   (quote
+    (""
+     (:propertize " " face powerline-active1)
+     (:eval
+      (propertize " "
+                  (quote display)
+                  (funcall
+                   (intern
+                    (format "powerline-%s-%s"
+                            (powerline-current-separator)
+                            (car powerline-default-separator-dir)))
+                   (quote powerline-active1)
+                   (quote powerline-active2))))
+     (:propertize " " face powerline-active2))))
+ '(sml/pos-minor-modes-separator
+   (quote
+    (""
+     (:propertize " " face powerline-active1)
+     (:eval
+      (propertize " "
+                  (quote display)
+                  (funcall
+                   (intern
+                    (format "powerline-%s-%s"
+                            (powerline-current-separator)
+                            (cdr powerline-default-separator-dir)))
+                   (quote powerline-active1)
+                   (quote sml/global))))
+     (:propertize " " face sml/global))))
+ '(sml/pre-id-separator
+   (quote
+    (""
+     (:propertize " " face sml/global)
+     (:eval
+      (propertize " "
+                  (quote display)
+                  (funcall
+                   (intern
+                    (format "powerline-%s-%s"
+                            (powerline-current-separator)
+                            (car powerline-default-separator-dir)))
+                   (quote sml/global)
+                   (quote powerline-active1))))
+     (:propertize " " face powerline-active1))))
+ '(sml/pre-minor-modes-separator
+   (quote
+    (""
+     (:propertize " " face powerline-active2)
+     (:eval
+      (propertize " "
+                  (quote display)
+                  (funcall
+                   (intern
+                    (format "powerline-%s-%s"
+                            (powerline-current-separator)
+                            (cdr powerline-default-separator-dir)))
+                   (quote powerline-active2)
+                   (quote powerline-active1))))
+     (:propertize " " face powerline-active1))))
+ '(sml/pre-modes-separator (propertize " " (quote face) (quote sml/modes)))
+ '(sml/shorten-modes t)
+ '(sml/theme (quote automatic))
+ '(sp-base-key-bindings nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 92 :width normal :foundry "default" :family "default"))))
+ '(company-tooltip ((t (:background "#0087ff" :foreground "white"))))
+ '(diff-added ((t (:inherit diff-changed :background "#226666"))))
+ '(diff-changed ((t (:foreground "white"))))
+ '(diff-file-header ((t (:weight ultra-bold))))
+ '(diff-header ((t (:background "#407f7f"))))
+ '(diff-removed ((t (:inherit diff-changed :background "#aa3939"))))
+ '(helm-selection ((t (:background "#00005f" :distant-foreground "black"))))
+ '(helm-visible-mark ((t (:background "#87005f"))))
+ '(highlight ((t (:background "#0087ff"))))
+ '(lazy-highlight ((t (:background "#0087ff"))))
+ '(link ((t (:foreground "cyan" :underline t))))
+ '(magit-diff-added ((t (:background "Plum" :foreground "gray30" :weight extra-bold))))
+ '(magit-diff-added-highlight ((t (:background "#cceecc" :foreground "black"))))
+ '(magit-diff-removed ((t (:inherit diff-removed))))
+ '(magit-diff-removed-highlight ((t (:inherit diff-removed :weight semi-bold))))
+ '(magit-section-heading ((t (:foreground "PaleGoldenrod" :weight bold))))
+ '(magit-section-highlight ((t (:background "grey15"))))
+ '(minibuffer-prompt ((t (:foreground "green"))))
+ '(region ((t (:background "lightgoldenrod2" :foreground "black"))))
+ '(secondary-selection ((t (:background "yellow1" :foreground "#1c1c1c"))))
+ '(semantic-highlight-edits-face ((t (:background "gray90" :foreground "black"))))
+ '(semantic-highlight-func-current-tag-face ((t (:background "gray90" :foreground "black"))))
+ '(semantic-idle-symbol-highlight ((t (:inherit region :foreground "black"))))
+ '(shadow ((t (:foreground "#226666"))))
+ '(smerge-lower ((t (:background "#003300"))))
+ '(smerge-markers ((t (:background "grey85" :foreground "black"))))
+ '(smerge-refined-added ((t (:inherit smerge-refined-change :background "#00b300" :weight ultra-bold))))
+ '(smerge-refined-removed ((t (:inherit smerge-refined-change :background "#b30000"))))
+ '(smerge-upper ((t (:background "#660000"))))
+ '(sml/vc ((t (:inherit sml/git :background "grey40" :foreground "#ee00bb"))))
+ '(sp-pair-overlay-face ((t (:inherit highlight :foreground "black"))))
+ '(speedbar-highlight-face ((t (:background "green" :foreground "black"))))
+ '(whitespace-space ((t (:foreground "blue1" :underline (:color foreground-color :style wave))))))
+
 (use-package try
   :ensure t)
 
@@ -39,12 +181,23 @@
          (c-mode . yafolding-mode)
          (c++-mode . yafolding-mode)))
 
+;; (use-package rich-minority :ensure t )
 (use-package smart-mode-line
   :ensure t
-  :config (sml/setup))
+  ;; :after rich-minority
+  :config
+  ;; (rich-minority-mode 1)
+  (setq rm-blacklist '(" GitGutter" " dtrt-indent" " company" " AceI"
+                       " Paredit" " Wrap" " Fill"))
+  (sml/setup))
+
+;; (use-package powerline
+  ;; :ensure t)
 
 (use-package smart-mode-line-powerline-theme
+  :ensure t
   :after smart-mode-line
+  ;; :after powerline
   :config (powerline-default-theme))
 
 (use-package magit
@@ -144,19 +297,18 @@
 (use-package smartparens
   :ensure t
   :config
-  (setq sp-autoskip-closing-pair 'always))
+  (setq sp-autoskip-closing-pair 'always)
+  (show-paren-mode 1))
 
 (use-package smartparens-config
   :ensure smartparens
   :config
-  (progn
     (show-smartparens-global-mode t)
     (sp-base-key-bindings 'paredit)
     (sp-autoskip-closing-pair 'always)
     (sp-hybrid-kill-entire-symbol nil)
     (smartparens-global-mode 1)
     (show-paren-mode 1)
-    )
   :hook ((prog-mode markdown-mode ) . turn-on-smartparens-mode))
 
 (use-package anzu
@@ -172,8 +324,7 @@
   :config
   (setq iedit-toggle-key-default nil)
   :bind
-  ("C-;" . iedit-mode)
-)
+  ("C-;" . iedit-mode))
 
 (use-package comment-dwim-2
   :ensure t
@@ -249,7 +400,6 @@
         ("C-c j" . ace-jump-mode)
         ("C-c M-j" . ace-jump-mode-pop-mark)))
 
-
 (use-package flycheck
   :ensure t
   :hook ((after-init-hook . #'global-flycheck-mode)
@@ -323,21 +473,19 @@
   ;; (define-key image-dired-thumbnail-mode-map "\C-p" 'image-diredx-previous-line)
  )
 
-
 (use-package discover-my-major
   :ensure t
   :bind ("C-h S-m" . discover-my-major) )
 
-
 (use-package rainbow-delimiters
   :ensure t
   :hook
-  (c++-mode . #'rainbow-delimiters-mode) )
+  (c++-mode . rainbow-delimiters-mode) )
 
 (use-package rainbow-identifiers
   :ensure t
   :hook
-  (c++-mode . #'rainbow-identifiers-mode) )
+  (c++-mode . rainbow-identifiers-mode) )
 
 (use-package highlight-symbol
   :ensure t
@@ -350,7 +498,8 @@
 (use-package ace-window
   :ensure t
   :bind*
-  ("M-o" . ace-window) )
+  (("M-o" . ace-window)
+  ("<f2>" . ace-window)))
 
 (use-package git-gutter
   :ensure t
@@ -362,14 +511,10 @@
 (require 'setup-editing)
 (require 'setup-sidebar)
 (require 'setup-helm)
-;(require 'setup-helm-gtags)
-;; (require 'setup-ggtags)
-;; (require 'setup-cedet)
-;; (require 'setup-environment)
 (require 'renumber-tests)
 (require 'setup-keybindings)
 
-
+(yafolding-hide-all)
 
 
 ;;; *  *  *  *  *  *  *  *
@@ -512,75 +657,6 @@ Optional argument ARG sets number of expressions to move."
 ;;                   ("More"
 ;;                    ("h" "highlighters ..." makey-key-mode-popup-isearch-highlight))))
 ;;  :bind "C-c M-d")
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "5c0ac0e7d92102542908459ffd16f3735f556634191d0fa28d8fd98c31d97cc3" default)))
- '(magit-commit-arguments (quote ("--verbose")))
- '(magit-diff-arguments
-   (quote
-    ("--no-ext-diff" "--stat" "--diff-algorithm=patience")))
- '(magit-diff-section-arguments
-   (quote
-    ("--function-context" "--ignore-space-change" "--no-ext-diff")))
- '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "--stat" "-n256")))
- '(package-selected-packages
-   (quote
-    (smart-mode-line try yatemplate shut-up buttercup auto-yasnippet helm-c-yasnippet ivy-yasnippet yasnippet yasnippet-snippets lsp-treemacs ccls company-lsp helm-lsp lsp-clangd lsp-mode lsp-ui ace-window company-ycmd flycheck-ycmd ycmd git-gutter git-timemachine gitconfig-mode irony deferred request-deferred helm-bind-key helm-descbinds helm-describe-modes use-package discover discover-my-major dash-functional frame-local ov xkcd magit-org-todos magit-todos dired-rainbow rainbow-delimiters rainbow-identifiers isearch-symbol-at-point which-key buffer-move zygospore yafolding xterm-color ws-butler volatile-highlights undo-tree smartscan smartparens magit-gitflow magit-filenotify magit iy-go-to-char isearch+ image-dired+ image+ iedit helm-swoop helm-projectile helm-gtags helm-gitignore helm-git helm-fuzzier helm-flycheck helm-flx helm-company google-this gitignore-mode git-commit ggtags fuzzy function-args frame-cmds flycheck-irony flycheck expand-line epl embrace duplicate-thing dummyparens dtrt-indent flyspell-lazy flyspell-correct-helm helm-flyspell dired-subtree dired-dups dired-sort dired-filter dired+ digit-groups diffview cmake-project comment-dwim-2 company-flx company-try-hard company-statistics company-irony-c-headers company-irony company-c-headers company cmake-mode clean-buffers clean-aindent-mode bookmark+ autopair anzu ace-jump-mode ace-jump-helm-line ace-isearch)))
- '(rtags-socket-file "/home/shmuel/.rdm")
- '(safe-local-variable-values
-   (quote
-    ((projectile-project-compilation-cmd . "cd /home/shmuel/src/fx_hpx/src/build/clang && make -kj4")
-     (projectile-project-compilation-cmd . "cd /home/shmuel/src/fx_hpx/src/build/gcc && make -kj4")
-     (eval c-set-offset
-           (quote innamespace)
-           0))))
- '(smartparens-global-mode t)
- '(smartparens-global-strict-mode nil)
- '(sp-base-key-bindings nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 92 :width normal :foundry "default" :family "default"))))
- '(company-tooltip ((t (:background "#0087ff" :foreground "white"))))
- '(diff-added ((t (:inherit diff-changed :background "#226666"))))
- '(diff-changed ((t (:foreground "white"))))
- '(diff-file-header ((t (:weight ultra-bold))))
- '(diff-header ((t (:background "#407f7f"))))
- '(diff-removed ((t (:inherit diff-changed :background "#aa3939"))))
- '(helm-selection ((t (:background "#00005f" :distant-foreground "black"))))
- '(helm-visible-mark ((t (:background "#87005f"))))
- '(highlight ((t (:background "#0087ff"))))
- '(lazy-highlight ((t (:background "#0087ff"))))
- '(link ((t (:foreground "cyan" :underline t))))
- '(magit-diff-added ((t (:background "Plum" :foreground "gray30" :weight extra-bold))))
- '(magit-diff-added-highlight ((t (:background "#cceecc" :foreground "black"))))
- '(magit-diff-removed ((t (:inherit diff-removed))))
- '(magit-diff-removed-highlight ((t (:inherit diff-removed :weight semi-bold))))
- '(magit-section-heading ((t (:foreground "PaleGoldenrod" :weight bold))))
- '(magit-section-highlight ((t (:background "grey15"))))
- '(minibuffer-prompt ((t (:foreground "green"))))
- '(region ((t (:background "lightgoldenrod2" :foreground "black"))))
- '(secondary-selection ((t (:background "yellow1" :foreground "#1c1c1c"))))
- '(semantic-highlight-edits-face ((t (:background "gray90" :foreground "black"))))
- '(semantic-highlight-func-current-tag-face ((t (:background "gray90" :foreground "black"))))
- '(semantic-idle-symbol-highlight ((t (:inherit region :foreground "black"))))
- '(shadow ((t (:foreground "#226666"))))
- '(smerge-lower ((t (:background "#003300"))))
- '(smerge-markers ((t (:background "grey85" :foreground "black"))))
- '(smerge-refined-added ((t (:inherit smerge-refined-change :background "#00b300" :weight ultra-bold))))
- '(smerge-refined-removed ((t (:inherit smerge-refined-change :background "#b30000"))))
- '(smerge-upper ((t (:background "#660000"))))
- '(sp-pair-overlay-face ((t (:inherit highlight :foreground "black"))))
- '(speedbar-highlight-face ((t (:background "green" :foreground "black"))))
- '(whitespace-space ((t (:foreground "blue1" :underline (:color foreground-color :style wave))))))
 
 
 
