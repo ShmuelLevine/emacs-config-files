@@ -11,3 +11,4 @@ session.*projecile.cache
 projectile.cache
 .cache
 .lsp-session-v1
+transient*
