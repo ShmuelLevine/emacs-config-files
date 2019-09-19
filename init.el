@@ -55,74 +55,74 @@
            0))))
  '(smartparens-global-mode t)
  '(smartparens-global-strict-mode nil)
- '(sml/mode-width
-   (if
-       (eq
-        (powerline-current-separator)
-        (quote arrow))
-       (quote right)
-     (quote full)))
+ ;; '(sml/mode-width
+ ;;   (if
+ ;;       (eq
+ ;;        (powerline-current-separator)
+ ;;        (quote arrow))
+ ;;       (quote right)
+ ;;     (quote full)))
  '(sml/no-confirm-load-theme t)
- '(sml/pos-id-separator
-   (quote
-    (""
-     (:propertize " " face powerline-active1)
-     (:eval
-      (propertize " "
-                  (quote display)
-                  (funcall
-                   (intern
-                    (format "powerline-%s-%s"
-                            (powerline-current-separator)
-                            (car powerline-default-separator-dir)))
-                   (quote powerline-active1)
-                   (quote powerline-active2))))
-     (:propertize " " face powerline-active2))))
- '(sml/pos-minor-modes-separator
-   (quote
-    (""
-     (:propertize " " face powerline-active1)
-     (:eval
-      (propertize " "
-                  (quote display)
-                  (funcall
-                   (intern
-                    (format "powerline-%s-%s"
-                            (powerline-current-separator)
-                            (cdr powerline-default-separator-dir)))
-                   (quote powerline-active1)
-                   (quote sml/global))))
-     (:propertize " " face sml/global))))
- '(sml/pre-id-separator
-   (quote
-    (""
-     (:propertize " " face sml/global)
-     (:eval
-      (propertize " "
-                  (quote display)
-                  (funcall
-                   (intern
-                    (format "powerline-%s-%s"
-                            (powerline-current-separator)
-                            (car powerline-default-separator-dir)))
-                   (quote sml/global)
-                   (quote powerline-active1))))
-     (:propertize " " face powerline-active1))))
- '(sml/pre-minor-modes-separator
-   (quote
-    (""
-     (:propertize " " face powerline-active2)
-     (:eval
-      (propertize " "
-                  (quote display)
-                  (funcall
-                   (intern
-                    (format "powerline-%s-%s"
-                            (powerline-current-separator)
-                            (cdr powerline-default-separator-dir)))
-                   (quote powerline-active2)
-                   (quote powerline-active1))))
-     (:propertize " " face powerline-active1))))
+ ;; '(sml/pos-id-separator
+ ;;   (quote
+ ;;    (""
+ ;;     (:propertize " " face powerline-active1)
+ ;;     (:eval
+ ;;      (propertize " "
+ ;;                  (quote display)
+ ;;                  (funcall
+ ;;                   (intern
+ ;;                    (format "powerline-%s-%s"
+ ;;                            (powerline-current-separator)
+ ;;                            (car powerline-default-separator-dir)))
+ ;;                   (quote powerline-active1)
+ ;;                   (quote powerline-active2))))
+ ;;     (:propertize " " face powerline-active2))))
+ ;; '(sml/pos-minor-modes-separator
+ ;;   (quote
+ ;;    (""
+ ;;     (:propertize " " face powerline-active1)
+ ;;     (:eval
+ ;;      (propertize " "
+ ;;                  (quote display)
+ ;;                  (funcall
+ ;;                   (intern
+ ;;                    (format "powerline-%s-%s"
+ ;;                            (powerline-current-separator)
+ ;;                            (cdr powerline-default-separator-dir)))
+ ;;                   (quote powerline-active1)
+ ;;                   (quote sml/global))))
+ ;;     (:propertize " " face sml/global))))
+ ;; '(sml/pre-id-separator
+ ;;   (quote
+ ;;    (""
+ ;;     (:propertize " " face sml/global)
+ ;;     (:eval
+ ;;      (propertize " "
+ ;;                  (quote display)
+ ;;                  (funcall
+ ;;                   (intern
+ ;;                    (format "powerline-%s-%s"
+ ;;                            (powerline-current-separator)
+ ;;                            (car powerline-default-separator-dir)))
+ ;;                   (quote sml/global)
+ ;;                   (quote powerline-active1))))
+ ;;     (:propertize " " face powerline-active1))))
+ ;; '(sml/pre-minor-modes-separator
+ ;;   (quote
+ ;;    (""
+ ;;     (:propertize " " face powerline-active2)
+ ;;     (:eval
+ ;;      (propertize " "
+ ;;                  (quote display)
+ ;;                  (funcall
+ ;;                   (intern
+ ;;                    (format "powerline-%s-%s"
+ ;;                            (powerline-current-separator)
+ ;;                            (cdr powerline-default-separator-dir)))
+ ;;                   (quote powerline-active2)
+ ;;                   (quote powerline-active1))))
+ ;;     (:propertize " " face powerline-active1))))
  '(sml/pre-modes-separator (propertize " " (quote face) (quote sml/modes)))
  '(sml/shorten-modes t)
  '(sml/theme (quote automatic))
@@ -181,24 +181,44 @@
          (c-mode . yafolding-mode)
          (c++-mode . yafolding-mode)))
 
-;; (use-package rich-minority :ensure t )
+;; (use-package rich-minority :ensure t
+;;   :config
+;;   ;; (rich-minority-mode 1)
+;;   (setq rm-blacklist '(" GitGutter" " dtrt-indent" " company" " AceI"
+;;                        " Paredit" " Wrap" " Fill"))
+
+;;   )
+
+
 (use-package smart-mode-line
   :ensure t
   ;; :after rich-minority
   :config
   ;; (rich-minority-mode 1)
-  (setq rm-blacklist '(" GitGutter" " dtrt-indent" " company" " AceI"
-                       " Paredit" " Wrap" " Fill"))
-  (sml/setup))
+  (setq rm-excluded-modes '("GitGutter" "dtrt-indent" "company" "AceI"
+                       "Paredit" "Wrap" "Fill"))
+  (setq rm-blacklist '("GitGutter" "dtrt-indent" "company" "AceI"
+                       "Paredit" "Wrap" "Fill"))
+  (setq sml/hidden-modes '("GitGutter" "dtrt-indent" "company" "AceI"
+                           "Paredit" "Wrap" "Fill"))
+  (setq minor-mode-alist ())
+  (sml/setup)
+  (column-number-mode 1)
+  (size-indication-mode 1)
+  )
 
 ;; (use-package powerline
   ;; :ensure t)
 
-(use-package smart-mode-line-powerline-theme
-  :ensure t
-  :after smart-mode-line
-  ;; :after powerline
-  :config (powerline-default-theme))
+;; (use-package smart-mode-line-powerline-theme
+;;   :ensure t
+;;   :after smart-mode-line
+;;   ;; :after powerline
+;;   :config 
+;;   (setq minor-mode-alist ())
+;;   (sml/setup)
+;;   (powerline-default-theme)
+;;   )
 
 (use-package magit
   :ensure t
@@ -215,7 +235,9 @@
 (use-package projectile
   :config (projectile-mode)
           (setq projectile-enable-caching t)
-          (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+          (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+ :diminish t
+          )
 
 (use-package helm-projectile
   :config (helm-projectile-on)
@@ -340,23 +362,51 @@
     '(define-key helm-map (kbd "C-'") 'ace-jump-helm-line)))
 
 (use-package lsp-mode :commands lsp
-  :bind (:map c++-mode-map (
-         ("M-." . lsp-find-definition)
-         ("C-." . lsp-find-references))))
+  :init
+  (require 'lsp-clients)
 
-(use-package lsp-ui :commands lsp-ui-mode)
+                                        ;(lsp-clients-register-clangd)
+  :bind ( (
+         ("M-." . lsp-find-definition)
+         ("C-." . lsp-find-references)))
+  :hook ((c-mode c++-mode objc-mode) . lsp)
+  :config (setq lsp-prefer-flymake nil) ;; Prefer using lsp-ui (flycheck) over flymake.
+
+  )
+
+(use-package lsp-ui :commands lsp-ui-mode
+  :requires lsp-mode flycheck
+  :config
+
+  (setq lsp-ui-doc-enable t
+        lsp-ui-doc-use-childframe t
+        lsp-ui-doc-position 'top
+        lsp-ui-doc-include-signature t
+        lsp-ui-sideline-enable nil
+        lsp-ui-flycheck-enable t
+        lsp-ui-flycheck-list-position 'right
+        lsp-ui-flycheck-live-reporting t
+        lsp-ui-peek-enable t
+        lsp-ui-peek-list-width 60
+        lsp-ui-peek-peek-height 25)
+  :hook ( (lsp-mode . lsp-ui-mode))
+
+  )
+
+
 (use-package company-lsp
-  :commands company-lsp
+:commands company-lsp
+:after company
   :bind ("M-i" . company-lsp)
   )
 
-(use-package ccls
-  :config
-  (setq ccls-executable "/usr/local/bin/ccls")
-  (setq lsp-prefer-flymake nil)
-  (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-cppcheck c/c++-gcc))
-  :hook ((c-mode c++-mode objc-mode) .
-         (lambda () (require 'ccls) (lsp))))
+;; (use-package ccls
+;;   :config
+;;   (setq ccls-executable "/usr/local/bin/ccls")
+;;   (setq lsp-prefer-flymake nil)
+;;   (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-cppcheck c/c++-gcc))
+;;   :hook ((c-mode c++-mode objc-mode) .
+;;          (lambda () (require 'ccls) (lsp))))
 
 (use-package company-irony-c-headers
   :ensure company )
@@ -365,7 +415,7 @@
   :ensure t
   :config
   (delete 'company-semantic company-backends)
-  (delete 'company-capf company-backends)
+  ;; (delete 'company-capf company-backends)
   (setq company-idle-delay 0.25)
   (setq company-async-timeout 10) ;; set timeout to 10 seconds
   (setq process-adaptive-read-buffering nil)
@@ -380,11 +430,17 @@
                             ))
   :hook
   (after-init-hook . global-company-mode)
-  :bind (:map c++-mode-map ([(backtab)] . company-complete)
-              :map company-mode-map ("C-:" . helm-company)
-              :map company-active-map ("C-:" . helm-company)
+  ;; :bind (:map c++-mode-map ([(backtab)] . company-complete)
+  ;;             :map company-mode-map ("C-:" . helm-company)
+  ;;             :map company-active-map ("C-:" . helm-company)
+  ;;             )
+  :bind ( ([(backtab)] . company-complete)
+               ("C-:" . helm-company)
+              
               )
-  )
+)
+
+(add-hook 'after-init-hook 'global-company-mode)
 
 (use-package company-flx
   :ensure t
@@ -513,9 +569,6 @@
 (require 'setup-helm)
 (require 'renumber-tests)
 (require 'setup-keybindings)
-
-(yafolding-hide-all)
-
 
 ;;; *  *  *  *  *  *  *  *
 ;; Setup functionality not contained within a package
