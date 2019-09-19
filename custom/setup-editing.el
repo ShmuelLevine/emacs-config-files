@@ -1,3 +1,12 @@
+;;; Setup-Editing.el --- Configure editing basics
+
+;;; Commentary:
+
+;; This file sets up various packages and settings related to the editing functionality in Emacs
+
+;;; Code:
+
+
 ;; GROUP: Editing -> Editing Basics
 
 (setq global-mark-ring-max 5000         ; increase mark ring to contains 5000 entries
@@ -71,18 +80,31 @@
 (yas-global-mode 1)
 
 ;; PACKAGE: smartparens
-(require 'smartparens-config)
-(setq sp-base-key-bindings 'paredit)
+(require 'smartparens)
+;(setq sp-base-key-bindings 'paredit)
 (setq sp-autoskip-closing-pair 'always)
-(setq sp-hybrid-kill-entire-symbol nil)
-(sp-use-paredit-bindings)
+;(setq sp-hybrid-kill-entire-symbol nil)
+                                        ;(sp-use-paredit-bindings)
+
 
 ;(global-set-key (kbd "M-<left>") 'sp-beginning-of-sexp)
 ;(global-set-key (kbd "M-<right>") 'sp-end-of-sexp)
 
+(use-package smartparens-config
+             :ensure smartparens
+             :config
+             (progn
+               (show-smartparens-global-mode t)
+               (sp-base-key-bindings 'paredit)
+               (sp-autoskip-closing-pair 'always)
+               (sp-hybrid-kill-entire-symbol nil)
+               (smartparens-global-mode 1)
+               )
+             :hook ((prog-mode markdown-mode ) . turn-on-smartparens-mode)
+             )
+;; (add-hook 'prog-mode-hook 'turn-on-smartparens-mode)
+;; (add-hook 'markdown-mode-hook 'turn-on-smartparens-mode)
 
-(show-smartparens-global-mode +1)
-(smartparens-global-mode 1)
 
 ;; PACKAGE: comment-dwim-2
 ;(global-set-key (kbd "M-;") 'comment-dwim-2)

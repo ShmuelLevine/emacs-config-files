@@ -39,8 +39,8 @@
 
 ;; Set the 'reverse-video' option, which should apply to all new
 ;; frames created by emacs
-(setq default-frame-alist
-      (cons (cons 'reverse t) default-frame-alist))
+;; (setq default-frame-alist
+;;       (cons (cons 'reverse t) default-frame-alist))
 
 ;; magit
 (require 'magit)
@@ -52,7 +52,7 @@
  (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 
 ;; C-f in magit status buffer will invoke the gitflow popup.
-(load "/usr/share/emacs/site-lisp/clang-format-5.0/clang-format.el")
+(load "/usr/share/emacs/site-lisp/clang-format-8/clang-format.el")
 ;(load "/usr/local/share/clang/clang-format.el")
 ;(global-set-key [C-M-tab] "clang-format-region")
 ;(global-set-key (kbd "C-x \\") 'clang-format-region)
@@ -62,10 +62,11 @@
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 
+(require 'use-package)
 (require 'setup-helm)
-(require 'setup-helm-gtags)
+;(require 'setup-helm-gtags)
 ;; (require 'setup-ggtags)
-(require 'setup-cedet)
+;; (require 'setup-cedet)
 (require 'setup-editing)
 (require 'setup-environment)
 (require 'setup-completion)
@@ -73,6 +74,9 @@
 (require 'setup-bookmarks)
 (require 'renumber-tests)
 (require 'setup-keybindings)
+
+;; Add improved function-related help system
+(require 'help-fns+)
 
 ;(windmove-default-keybindings)
 
@@ -115,7 +119,7 @@
 (setq-default indent-tabs-mode nil)
 
 ;; set appearance of a tab that is represented by 4 spaces
-(setq-default tab-width 4)
+;; (setq-default tab-width 4)
 
 ;; Compilation
 (global-set-key (kbd "<f5>") (lambda ()
@@ -136,28 +140,6 @@
 ;(require 'clean-aindent-mode)
 ;(add-hook 'prog-mode-hook 'clean-aindent-mode)
 
-;; Package: dtrt-indent
-(require 'dtrt-indent)
-(dtrt-indent-mode 1)
-
-;; Package: ws-butler
-(require 'ws-butler)
-(add-hook 'prog-mode-hook 'ws-butler-mode)
-
-;; Package: yasnippet
-(require 'yasnippet)
-(yas-global-mode 1)
-
-;; Package: smartparens
-(require 'smartparens-config)
-
-(setq sp-base-key-bindings 'paredit)
-(setq sp-autoskip-closing-pair 'always)
-(setq sp-hybrid-kill-entire-symbol nil)
-(sp-use-paredit-bindings)
-
-(show-smartparens-global-mode +1)
-(smartparens-global-mode 1)
 
 ;; Package: projectile
 (require 'projectile)
@@ -221,25 +203,34 @@
    (quote
     ("5c0ac0e7d92102542908459ffd16f3735f556634191d0fa28d8fd98c31d97cc3" default)))
  '(magit-commit-arguments (quote ("--verbose")))
+ '(magit-diff-arguments
+   (quote
+    ("--no-ext-diff" "--stat" "--diff-algorithm=patience")))
  '(magit-diff-section-arguments
    (quote
     ("--function-context" "--ignore-space-change" "--no-ext-diff")))
+ '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "--stat" "-n256")))
  '(package-selected-packages
    (quote
-    (discover discover-my-major dash-functional frame-local ov xkcd magit-org-todos magit-todos dired-rainbow rainbow-delimiters rainbow-identifiers isearch-symbol-at-point which-key buffer-move zygospore yafolding xterm-color ws-butler volatile-highlights undo-tree smartscan smartparens magit-gitflow magit-filenotify magit iy-go-to-char isearch+ image-dired+ image+ iedit helm-swoop helm-projectile helm-gtags helm-gitignore helm-git helm-fuzzier helm-flycheck helm-flx helm-company google-this gitignore-mode git-commit ggtags fuzzy function-args frame-cmds flycheck-irony flycheck expand-line epl embrace duplicate-thing dummyparens dtrt-indent flyspell-lazy flyspell-correct-helm helm-flyspell dired-subtree dired-dups dired-sort dired-filter dired+ digit-groups diffview cmake-project comment-dwim-2 company-flx company-try-hard company-statistics company-irony-c-headers company-irony company-c-headers company cmake-mode clean-buffers clean-aindent-mode bookmark+ autopair anzu ace-jump-mode ace-jump-helm-line ace-isearch)))
+    (lsp-treemacs ccls company-lsp helm-lsp lsp-clangd lsp-mode lsp-ui ace-window company-ycmd flycheck-ycmd ycmd git-gutter git-timemachine gitconfig-mode irony deferred request-deferred helm-bind-key helm-descbinds helm-describe-modes use-package discover discover-my-major dash-functional frame-local ov xkcd magit-org-todos magit-todos dired-rainbow rainbow-delimiters rainbow-identifiers isearch-symbol-at-point which-key buffer-move zygospore yafolding xterm-color ws-butler volatile-highlights undo-tree smartscan smartparens magit-gitflow magit-filenotify magit iy-go-to-char isearch+ image-dired+ image+ iedit helm-swoop helm-projectile helm-gtags helm-gitignore helm-git helm-fuzzier helm-flycheck helm-flx helm-company google-this gitignore-mode git-commit ggtags fuzzy function-args frame-cmds flycheck-irony flycheck expand-line epl embrace duplicate-thing dummyparens dtrt-indent flyspell-lazy flyspell-correct-helm helm-flyspell dired-subtree dired-dups dired-sort dired-filter dired+ digit-groups diffview cmake-project comment-dwim-2 company-flx company-try-hard company-statistics company-irony-c-headers company-irony company-c-headers company cmake-mode clean-buffers clean-aindent-mode bookmark+ autopair anzu ace-jump-mode ace-jump-helm-line ace-isearch)))
+ '(rtags-socket-file "/home/shmuel/.rdm")
  '(safe-local-variable-values
    (quote
     ((projectile-project-compilation-cmd . "cd /home/shmuel/src/fx_hpx/src/build/clang && make -kj4")
      (projectile-project-compilation-cmd . "cd /home/shmuel/src/fx_hpx/src/build/gcc && make -kj4")
      (eval c-set-offset
            (quote innamespace)
-           0)))))
+           0))))
+ '(smartparens-global-mode t)
+ '(smartparens-global-strict-mode nil)
+ '(sp-base-key-bindings nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-tooltip ((t (:background "#0087ff" :foreground "brightwhite"))))
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 112 :width normal :foundry "default" :family "default"))))
+ '(company-tooltip ((t (:background "#0087ff" :foreground "white"))))
  '(diff-added ((t (:inherit diff-changed :background "#226666"))))
  '(diff-changed ((t (:foreground "white"))))
  '(diff-file-header ((t (:weight ultra-bold))))
@@ -290,7 +281,7 @@ Optional argument ARG sets number of expressions to move."
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
 
 ;; Custom code to renumber unit tests
-(require 'renumber-tests)
+;; (require 'renumber-tests)
 ;(global-set-key (kbd "C-c M-s n") 'renumber-tests)
 ;(global-set-key (kbd "C-c M-s r") 'renumber-tests-auto)
 
@@ -310,3 +301,4 @@ Optional argument ARG sets number of expressions to move."
 (provide 'init)
 ;;; init.el ends here
 (put 'dired-find-alternate-file 'disabled nil)
+(put 'downcase-region 'disabled nil)

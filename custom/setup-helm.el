@@ -113,5 +113,17 @@
 
 (helm-mode 1)
 
+;; Change the width of the filename column in helm-buffers to 35.  The default 20
+;; is too short and truncates too many of my usual filenames
+;(setq helm-buffer-max-length 35)
+; Or use this command instead to use the longest buffer name
+(setq helm-buffer-max-length nil)
+
+(require 'helm-descbinds)
+(helm-descbinds-mode)
+
+(require 'helm-describe-modes)
+(global-set-key [remap describe-mode] #'helm-describe-modes)
+
 (provide 'setup-helm)
 ;;; setup-helm.el ends here
