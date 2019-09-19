@@ -53,6 +53,7 @@
 
 ;; C-f in magit status buffer will invoke the gitflow popup.
 (load "/usr/share/emacs/site-lisp/clang-format-8/clang-format.el")
+;; (load "/usr/share/emacs/site-lisp/clang-format-7/clang-format.el")
 ;(load "/usr/local/share/clang/clang-format.el")
 ;(global-set-key [C-M-tab] "clang-format-region")
 ;(global-set-key (kbd "C-x \\") 'clang-format-region)
@@ -213,6 +214,7 @@
  '(package-selected-packages
    (quote
     (lsp-treemacs ccls company-lsp helm-lsp lsp-clangd lsp-mode lsp-ui ace-window company-ycmd flycheck-ycmd ycmd git-gutter git-timemachine gitconfig-mode irony deferred request-deferred helm-bind-key helm-descbinds helm-describe-modes use-package discover discover-my-major dash-functional frame-local ov xkcd magit-org-todos magit-todos dired-rainbow rainbow-delimiters rainbow-identifiers isearch-symbol-at-point which-key buffer-move zygospore yafolding xterm-color ws-butler volatile-highlights undo-tree smartscan smartparens magit-gitflow magit-filenotify magit iy-go-to-char isearch+ image-dired+ image+ iedit helm-swoop helm-projectile helm-gtags helm-gitignore helm-git helm-fuzzier helm-flycheck helm-flx helm-company google-this gitignore-mode git-commit ggtags fuzzy function-args frame-cmds flycheck-irony flycheck expand-line epl embrace duplicate-thing dummyparens dtrt-indent flyspell-lazy flyspell-correct-helm helm-flyspell dired-subtree dired-dups dired-sort dired-filter dired+ digit-groups diffview cmake-project comment-dwim-2 company-flx company-try-hard company-statistics company-irony-c-headers company-irony company-c-headers company cmake-mode clean-buffers clean-aindent-mode bookmark+ autopair anzu ace-jump-mode ace-jump-helm-line ace-isearch)))
+    ;; (yatemplate shut-up buttercup auto-yasnippet helm-c-yasnippet ivy-yasnippet yasnippet yasnippet-snippets lsp-treemacs ccls company-lsp helm-lsp lsp-clangd lsp-mode lsp-ui ace-window company-ycmd flycheck-ycmd ycmd git-gutter git-timemachine gitconfig-mode irony deferred request-deferred helm-bind-key helm-descbinds helm-describe-modes use-package discover discover-my-major dash-functional frame-local ov xkcd magit-org-todos magit-todos dired-rainbow rainbow-delimiters rainbow-identifiers isearch-symbol-at-point which-key buffer-move zygospore yafolding xterm-color ws-butler volatile-highlights undo-tree smartscan smartparens magit-gitflow magit-filenotify magit iy-go-to-char isearch+ image-dired+ image+ iedit helm-swoop helm-projectile helm-gtags helm-gitignore helm-git helm-fuzzier helm-flycheck helm-flx helm-company google-this gitignore-mode git-commit ggtags fuzzy function-args frame-cmds flycheck-irony flycheck expand-line epl embrace duplicate-thing dummyparens dtrt-indent flyspell-lazy flyspell-correct-helm helm-flyspell dired-subtree dired-dups dired-sort dired-filter dired+ digit-groups diffview cmake-project comment-dwim-2 company-flx company-try-hard company-statistics company-irony-c-headers company-irony company-c-headers company cmake-mode clean-buffers clean-aindent-mode bookmark+ autopair anzu ace-jump-mode ace-jump-helm-line ace-isearch)))
  '(rtags-socket-file "/home/shmuel/.rdm")
  '(safe-local-variable-values
    (quote
@@ -230,6 +232,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 112 :width normal :foundry "default" :family "default"))))
+ ;; '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 92 :width normal :foundry "default" :family "default"))))
  '(company-tooltip ((t (:background "#0087ff" :foreground "white"))))
  '(diff-added ((t (:inherit diff-changed :background "#226666"))))
  '(diff-changed ((t (:foreground "white"))))

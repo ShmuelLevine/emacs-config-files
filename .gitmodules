@@ -1,0 +1,6 @@
+[submodule "rtags"]
+	path = custom/rtags
+	url = https://github.com/Andersbakken/rtags.git
+[submodule "old_emacs-ycmd"]
+	path = custom/old_emacs-ycmd
+	url = https://github.com/abingham/emacs-ycmd.git
