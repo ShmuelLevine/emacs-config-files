@@ -10,3 +10,9 @@
 #[submodule "custom/all-the-icons"]
 #	path = custom/all-the-icons
 #	url = ./custom/all-the-icons/
+[submodule "custom/icons-in-terminal"]
+	path = custom/icons-in-terminal
+	url = https://github.com/sebastiencs/icons-in-terminal.git
+[submodule "custom/sidebar.el"]
+	path = custom/sidebar.el
+	url = https://github.com/sebastiencs/sidebar.el.git
