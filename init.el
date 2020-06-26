@@ -44,7 +44,7 @@
  '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "--stat" "-n256")))
  '(package-selected-packages
    (quote
-    (smart-mode-line-powerline-theme smart-mode-line try yatemplate shut-up buttercup auto-yasnippet helm-c-yasnippet ivy-yasnippet yasnippet yasnippet-snippets lsp-treemacs ccls company-lsp helm-lsp lsp-clangd lsp-mode lsp-ui ace-window company-ycmd flycheck-ycmd ycmd git-gutter git-timemachine gitconfig-mode irony deferred request-deferred helm-bind-key helm-descbinds helm-describe-modes use-package discover discover-my-major dash-functional frame-local ov xkcd magit-org-todos magit-todos dired-rainbow rainbow-delimiters rainbow-identifiers isearch-symbol-at-point which-key buffer-move zygospore yafolding xterm-color ws-butler volatile-highlights undo-tree smartscan smartparens magit-gitflow magit-filenotify magit iy-go-to-char isearch+ image-dired+ image+ iedit helm-swoop helm-projectile helm-gtags helm-gitignore helm-git helm-fuzzier helm-flycheck helm-flx helm-company google-this gitignore-mode git-commit ggtags fuzzy function-args frame-cmds flycheck-irony flycheck expand-line epl embrace duplicate-thing dummyparens dtrt-indent flyspell-lazy flyspell-correct-helm helm-flyspell dired-subtree dired-dups dired-sort dired-filter dired+ digit-groups diffview cmake-project comment-dwim-2 company-flx company-try-hard company-statistics company-irony-c-headers company-irony company-c-headers company cmake-mode clean-buffers clean-aindent-mode bookmark+ autopair anzu ace-jump-mode ace-jump-helm-line ace-isearch)))
+    (highlight-symbol dired-hide-dotfiles dired-efap dired-quick-sort dired-narrow helm-pydoc py-yapf pycoverage pydoc pyimport python-pytest smart-mode-line-powerline-theme smart-mode-line try yatemplate shut-up buttercup auto-yasnippet helm-c-yasnippet ivy-yasnippet yasnippet yasnippet-snippets lsp-treemacs ccls company-lsp helm-lsp lsp-clangd lsp-mode lsp-ui ace-window company-ycmd flycheck-ycmd ycmd git-gutter git-timemachine gitconfig-mode deferred request-deferred helm-bind-key helm-descbinds helm-describe-modes use-package discover discover-my-major dash-functional frame-local ov xkcd magit-org-todos magit-todos dired-rainbow rainbow-delimiters rainbow-identifiers isearch-symbol-at-point which-key buffer-move zygospore yafolding xterm-color ws-butler volatile-highlights undo-tree smartscan smartparens magit-gitflow magit-filenotify magit iy-go-to-char isearch+ image-dired+ image+ iedit helm-swoop helm-projectile helm-gtags helm-gitignore helm-git helm-fuzzier helm-flycheck helm-flx helm-company google-this gitignore-mode git-commit ggtags fuzzy function-args frame-cmds flycheck-irony flycheck expand-line epl embrace duplicate-thing dummyparens dtrt-indent flyspell-lazy flyspell-correct-helm helm-flyspell dired-subtree dired-dups dired-sort dired-filter dired+ digit-groups diffview cmake-project comment-dwim-2 company-flx company-try-hard company-statistics company-irony-c-headers company-irony company-c-headers company cmake-mode clean-buffers clean-aindent-mode bookmark+ autopair anzu ace-jump-mode ace-jump-helm-line ace-isearch)))
  '(rtags-socket-file "/home/shmuel/.rdm")
  '(safe-local-variable-values
    (quote
@@ -55,74 +55,7 @@
            0))))
  '(smartparens-global-mode t)
  '(smartparens-global-strict-mode nil)
- ;; '(sml/mode-width
- ;;   (if
- ;;       (eq
- ;;        (powerline-current-separator)
- ;;        (quote arrow))
- ;;       (quote right)
- ;;     (quote full)))
  '(sml/no-confirm-load-theme t)
- ;; '(sml/pos-id-separator
- ;;   (quote
- ;;    (""
- ;;     (:propertize " " face powerline-active1)
- ;;     (:eval
- ;;      (propertize " "
- ;;                  (quote display)
- ;;                  (funcall
- ;;                   (intern
- ;;                    (format "powerline-%s-%s"
- ;;                            (powerline-current-separator)
- ;;                            (car powerline-default-separator-dir)))
- ;;                   (quote powerline-active1)
- ;;                   (quote powerline-active2))))
- ;;     (:propertize " " face powerline-active2))))
- ;; '(sml/pos-minor-modes-separator
- ;;   (quote
- ;;    (""
- ;;     (:propertize " " face powerline-active1)
- ;;     (:eval
- ;;      (propertize " "
- ;;                  (quote display)
- ;;                  (funcall
- ;;                   (intern
- ;;                    (format "powerline-%s-%s"
- ;;                            (powerline-current-separator)
- ;;                            (cdr powerline-default-separator-dir)))
- ;;                   (quote powerline-active1)
- ;;                   (quote sml/global))))
- ;;     (:propertize " " face sml/global))))
- ;; '(sml/pre-id-separator
- ;;   (quote
- ;;    (""
- ;;     (:propertize " " face sml/global)
- ;;     (:eval
- ;;      (propertize " "
- ;;                  (quote display)
- ;;                  (funcall
- ;;                   (intern
- ;;                    (format "powerline-%s-%s"
- ;;                            (powerline-current-separator)
- ;;                            (car powerline-default-separator-dir)))
- ;;                   (quote sml/global)
- ;;                   (quote powerline-active1))))
- ;;     (:propertize " " face powerline-active1))))
- ;; '(sml/pre-minor-modes-separator
- ;;   (quote
- ;;    (""
- ;;     (:propertize " " face powerline-active2)
- ;;     (:eval
- ;;      (propertize " "
- ;;                  (quote display)
- ;;                  (funcall
- ;;                   (intern
- ;;                    (format "powerline-%s-%s"
- ;;                            (powerline-current-separator)
- ;;                            (cdr powerline-default-separator-dir)))
- ;;                   (quote powerline-active2)
- ;;                   (quote powerline-active1))))
- ;;     (:propertize " " face powerline-active1))))
  '(sml/pre-modes-separator (propertize " " (quote face) (quote sml/modes)))
  '(sml/shorten-modes t)
  '(sml/theme (quote automatic))
@@ -436,7 +369,7 @@
   ;;             )
   :bind ( ([(backtab)] . company-complete)
                ("C-:" . helm-company)
-              
+
               )
 )
 
@@ -562,6 +495,41 @@
   :config
   (global-git-gutter-mode +1) )
 
+(use-package helm-pydoc
+  :ensure t
+  :bind (:map python-mode-map ("C-c C-d" . helm-pydoc))
+  )
+
+(use-package py-yapf
+  :after python
+  :ensure t
+  :hook (python-mode  . py-yapf-enable-on-save)
+  )
+
+(use-package pyimport
+  :ensure t
+  :after python
+  :bind (:map python-mode-map ("C-c i" . #'pyimport-insert-missing))
+  )
+
+(use-package python-pytest
+  :ensure t
+  :bind (:map python-mode-map ("C-c t" . python-pytest-popup))
+  :after python
+  :custom
+  (python-pytest-arguments
+   '("--color"          ;; colored output in the buffer
+     "--failed-first"   ;; run the previous failed tests first
+     "--maxfail=5"))    ;; exit in 5 continuous failures in a run
+  )
+
+;Seems necessary to ensure that my modules are included in the PYTHONPATH environment variable
+   (if (string-match-p "/var/local/foresight/pymodules" (getenv "PYTHONPATH"))
+       (print "Already in path")
+   (setenv "PYTHONPATH"
+           (concat "/var/local/foresight/pymodules:"
+                   (getenv "PYTHONPATH")))
+   )
 
 (require 'setup-bookmarks)
 (require 'setup-editing)
@@ -569,6 +537,10 @@
 (require 'setup-helm)
 (require 'renumber-tests)
 (require 'setup-keybindings)
+
+; Restore the old keybindings for helm
+(define-key helm-map (kbd "<left>") 'helm-previous-source)
+(define-key helm-map (kbd "<right>") 'helm-next-source)
 
 ;;; *  *  *  *  *  *  *  *
 ;; Setup functionality not contained within a package
